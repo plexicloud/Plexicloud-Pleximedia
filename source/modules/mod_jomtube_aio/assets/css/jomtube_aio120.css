@@ -1,0 +1,164 @@
+#browse-video-data-jtmodule {
+	padding:0px;
+}
+
+.grid-view-jtmodule .video-cell-jtmodule {
+	display:inline-block;
+	vertical-align:top;
+}
+
+.grid-view-jtmodule .video-cell-jtmodule {
+	width:24.9%;
+	float:left;
+}
+
+.grid-view-jtmodule .video-entry-jtmodule {
+	margin-bottom:10px;
+	width:124px;
+}
+
+.grid-view-jtmodule .video-entry-jtmodule {
+vertical-align:baseline;
+}
+
+.v90WrapperOuter-jtmodule {
+	border:1px solid #999999;
+	width:92px;
+}
+
+.v120WrapperOuter-jtmodule {
+	border:1px solid #999999;
+	width:122px;
+}
+
+.v150WrapperOuter-jtmodule {
+	border:1px solid #999999;
+	width:152px;
+}
+
+.v90WrapperInner-jtmodule {
+	border:1px solid #FFFFFF;
+	height:54px;
+	overflow:hidden;
+	width:90px;
+}
+
+.v120WrapperInner-jtmodule {
+	border:1px solid #FFFFFF;
+	height:72px;
+	overflow:hidden;
+	width:120px;
+}
+
+.v150WrapperInner-jtmodule {
+	border:1px solid #FFFFFF;
+	height:72px;
+	overflow:hidden;
+	width:150px;
+}
+
+.v120WrapperInner-jtmodule img {
+
+}
+
+.vimg90-jtmodule {
+	height:70px;
+	width:90px;
+	padding:0px;
+	margin-top:-10px;
+}
+
+.vimg120-jtmodule {
+	height:90px;
+	width:120px;
+	padding:0px;
+	margin-top:-10px;
+}
+
+.vimg150-jtmodule {
+	height:120px;
+	width:150px;
+	padding:0px;
+	margin-top:-20px;
+}
+
+.video-time-videolist-jtmodule {
+	font-family:Arial,sans-serif;
+	margin-right:2px;
+	margin-top:-81px;
+	text-align:right;
+	white-space:nowrap;
+}
+
+.video-time-videolist-jtmodule span {
+	-moz-border-radius-bottomleft:1px;
+	-moz-border-radius-bottomright:1px;
+	-moz-border-radius-topleft:1px;
+	-moz-border-radius-topright:1px;
+	background-color:#000000;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	height:14px;
+	opacity:0.65;
+	padding:0 4px;
+}
+
+#video-title-jtmodule {
+	margin-top:2px;
+	height:32px;
+	line-height:16px;
+	overflow:hidden;
+	font-size:100%;
+	font-weight:bold;
+	margin-bottom:2px;
+}
+
+#video-added-jtmodule {
+	font-size:90%;
+	line-height:13px;
+}
+
+#video-from-jtmodule {
+	font-size:90%;
+	line-height:13px;
+}
+
+.video-username-jtmodule {
+	font-size:90%;
+	font-weight:bold;
+}
+
+#video-view-count-jtmodule {
+	font-size:90%;
+	line-height:13px;
+	margin-bottom:1px;
+}
+
+#video-rating-jtmodule {
+
+}
+
+#video-rating-jtmodule span {
+	font-size:90%;
+}
+
+.rating-jtmodule {
+	display:inline;
+	vertical-align:middle;
+}
+
+.starsize-jtmodule120 {
+	width:12px;
+	height:12px;
+}
+
+.starsize-jtmodule90 {
+	width:10px;
+	height:10px;
+}
+
+
+/*###########################################*/
+/*#### YOUTUBE STYLE VIDEO LIST COLUMNS END  */
+/*###########################################*/

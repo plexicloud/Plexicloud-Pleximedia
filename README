@@ -1,0 +1,73 @@
+Plexicloud PlexiMedia Video Component v0.5.0
+============================================
+
+-----------------------
+INFO
+-----------------------
+This component targets websites that want to have video serving similar YouTube(TM)
+and other video commuties. Joomla has several unique video components
+but PlexiMedia Video Component targets a generic, template friendly approach with
+AJAX and web2.0 features.
+
+Ongoing development provided by Plexicloud, as the component is a major feature 
+in their PlexiSuite Media edition for the cloud.
+
+Join development efforts on Github
+  >> http://github.com/plexicloud/Plexicloud-Pleximedia
+
+
+-----------------------
+ROADMAP
+-----------------------
+1. Support Amazon S3
+2. Support encoding.com transcoding API
+3. Support Panda API http://pandastream.com/
+4. Support for Joomla 1.6 ACL API
+
+(see CHANGELOG file)
+
+-----------------------
+CREDITS
+-----------------------
+Original GPL code developed by:
+  >> Jomtube - http://www.jomtube.com
+  
+System and bug fixes:
+  >> MuseAmp.com / Hooduku, Inc
+
+
+-----------------------
+BUG REPORTING
+-----------------------
+http://github.com/plexicloud/Plexicloud-Pleximedia/issues
+
+(see CHANGELOG file)
+
+-----------------------
+LICENSE
+-----------------------
+(see LICENSE file)
+
+
+-----------------------
+DEVELOPMENT SPONSORS
+-----------------------
+
+We wanted to thank the following development sponsors and partners 
+that make this component ongoing development possible.
+
+Plexicloud - www.plexicloud.com
+  >> Platinum sponsors
+
+Hooduku - www.hooduku.com
+  >> Silver sponsors
+
+MuseAmp.com - www.museamp.com
+  >> Gold Sponsors
+  
+Lunafield Media Global - www.lunafield.com
+  >> Bronze Sponsors
+  
+
+*** Donate to the project at www.plexicloud.com/donate ***
+

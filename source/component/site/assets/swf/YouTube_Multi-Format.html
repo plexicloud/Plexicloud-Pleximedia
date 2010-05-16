@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+
+  <head>
+
+    <title>YouTube Multi-Format</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js"></script>
+
+  </head>
+
+  <body>
+
+
+    <script type="text/javascript">
+      var flashvars =
+      {
+      // fmt=6 HQ FLV 480x360  fmt=18 HQ MP4 480x270  fmt=22 HQ MP4 1280x720 fmt=35 HQ MP4 640x360
+      //...Good Test Case
+        'file':                                   encodeURIComponent('http://www.subfighter.tv/components/com_jomtube/assets/swf/YouTube_Multi-Format.php?v=K2_U1kbIcJQ&fmt=6'),
+        'type':                                  'video',
+        'stretching':                            'none',
+        'frontcolor':                            '86C29D',
+        'backcolor':                             '849BC1',
+        'lightcolor':                            'C286BA',
+        'screencolor':                           '000000',
+        'autostart':                             'true'
+      };
+
+      var params =
+      {
+        'allowfullscreen':                       'true',
+        'allowscriptaccess':                     'always',
+        'bgcolor':                               '#000000'
+      };
+
+      var attributes =
+      {
+        'name':                                  'playerId1',
+        'id':                                    'playerId1'
+      };
+
+      swfobject.embedSWF('player.swf', 'player1', '480', '290', '9.0.124', false, flashvars, params, attributes);
+    </script>
+
+
+    <div id="playercontainer1" class="playercontainer1">
+      <a id="player1" class="player1" href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">Get the Adobe Flash Player to see this video.</a>
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,176 @@
+@CHARSET "ISO-8859-1";
+
+/** header icons **/
+.icon-48-jomtube-configuration			{ background-image: url(../images/icon-48/configuration.png); }
+.icon-48-jomtube-categories			{ background-image: url(../images/icon-48/categories.png); }
+.icon-48-jomtube-videos			{ background-image: url(../images/icon-48/videos.png); }
+
+/** toolbar icons**/
+.icon-32-local-add                                    {background-image: url(../images/icon-32/local_add.png); }
+.icon-32-remote-add                                 {background-image: url(../images/icon-32/remote_add.png); }
+.icon-32-batch-upload                                 {background-image: url(../images/icon-32/batch_upload.png); }
+.icon-32-delete-video                                 {background-image: url(../images/icon-32/video_delete.png); }
+.icon-32-edit-video                                 {background-image: url(../images/icon-32/video_edit.png); }
+
+.icon-32-add-category                                 {background-image: url(../images/icon-32/add_category.png); }
+.icon-32-edit-category                                 {background-image: url(../images/icon-32/category_edit.png); }
+.icon-32-delete-category                                 {background-image: url(../images/icon-32/delete_category.png); }
+
+.jomtube_section {
+	float: left;
+	margin: 12px;
+	border: Solid thin #ededed;
+	border-collapse: collapse;
+	background-color: #fafafa;
+	padding: 8px;
+}
+
+.jomtube_wrapper {
+	width: auto;
+	margin: 0px auto 0px 0px;
+	vertical-align: top;
+}
+
+.jomtube_element {
+	clear: left;
+	float: left;
+	margin: 0px 0px 12px 0px;
+}
+
+.jomtube_element2 {
+	float: left;
+	width: auto;
+	margin: 0px 0px 12px 0px;
+}
+
+.jomtube_custom_mapping {
+	background-color: #fafafa;
+	padding: 5px;
+	text-size: small;
+	width: 100% auto;
+}
+
+.jomtube_custom_mapping input {
+	width: auto;
+}
+
+.jomtube_selectlist {
+
+}
+
+.jomtube_container {
+	padding: 0px;
+	margin: 0px;
+}
+
+.jomtube_title {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.jomtube_title a {
+	text-decoration: none;
+}
+
+.jomtube_title a:hover {
+	text-decoration: underline;
+}
+
+
+.jomtube_view {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+.jomtube_info {
+	text-align: left;
+	background-color: #eee;
+	border: Solid thin #ccc;
+}
+
+
+.jomtube_user {
+	margin-top: 7px;
+	padding: 7px;
+	width: auto;
+	float: left;
+}
+
+
+.jomtube_embed {
+	padding: 7px;
+
+}
+
+.jomtube_embed input {
+	width: 285px;
+	background-color: #ddd;
+	border: Solid thin #ccc;
+	font-size: 10px;
+	height: 12px;
+	vertical-align: top;
+
+}
+
+.jomtube_rate {
+	margin-top: 7px;
+	width: 50%;
+}
+
+.jomtube_desc {
+	margin-top: 7px;
+	float: right;
+	width: 50%;
+}
+
+.jomtube_nav_header {
+	text-align: center;
+}
+
+.jomtube_table {
+	padding: 0px;
+	margin: 0px;
+}
+
+.jomtube_table th {
+	background-color: #ccc;
+	color: #666666;
+	font-weight: bold;
+	font-size: 13px;
+	padding: 0px;
+}
+
+.jomtube_table td {
+	background-color: #fafafa;
+	border: Solid 1px #eaeaea;
+	text-align: left;
+	width: 100px;
+	height: 80px;
+}
+
+.jomtube_content {
+
+}
+
+.jomtube_header {
+	line-height: 200%;
+}
+
+.jomtube_footer {
+	margin-left: auto;
+	margin-right: 0px;
+}
+
+.jomtube_element submit {
+	font-size: 15px;
+}
+
+.jomtube_warning {
+    font-weight:bold;
+    color: red;
+}
+
+.jomtube_message {
+    font-weight:bold;
+    color: #6DB03C;
+}

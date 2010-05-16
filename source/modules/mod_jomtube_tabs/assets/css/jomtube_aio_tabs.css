@@ -1,0 +1,267 @@
+/*###########################################*/
+/*########## TABS SYSTEM ON VIDEO PLAYER PAGE */
+/*###########################################*/
+
+#tab-container-jt-tabs-module {
+    float: left;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+    z-index: -1;
+	width:99%;
+	height: 350px;
+/*    width: 356px; */
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.category-tabs-jt-tabs-module {
+    float: left;
+	border-bottom:1px solid #CCCCCC;
+	margin-bottom:-1px;
+	width:100%;
+}
+
+.category-tabs-jt-tabs-module a, .category-tabs-jt-tabs-module a:active {
+	background-color:#e2e4e3;
+	border-top:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	text-decoration:none;
+    float: left;
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    margin-right: 2px;
+    padding-top: 0pt;
+    padding-right: 3px;
+    padding-bottom: 0pt;
+    padding-left: 6px;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 1;
+	margin-bottom:-1px;
+}
+
+.category-tabs-jt-tabs-module a:hover {
+	background-color:#d3d3d3;
+	color:#232323;
+	text-decoration:none;
+}
+
+.category-tabs-jt-tabs-module a.selected {
+    background-color: transparent;
+	color:#000000;
+	text-decoration:none;
+	margin-bottom:-1px;
+	border-top:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-bottom:1px solid #FFFFFF;
+}
+
+.clearL {
+clear:left;
+}
+
+.clearboth {
+clear:both;
+}
+
+.clearfix {
+clear:both;
+}
+
+/*###########################################*/
+/*#### YOUTUBE STYLE VIDEO LIST COLUMNS START*/
+/*###########################################*/
+
+#browse-video-data-jt-tabs-module {
+	margin:10px;
+}
+
+.grid-view-jt-tabs-module .video-cell-jt-tabs-module {
+	display:inline-block;
+	vertical-align:top;
+
+}
+
+.grid-view-jt-tabs-module .video-cell-jt-tabs-module {
+	display:block;
+	width:24.9%;
+	float:left;
+	margin-bottom:10px;
+	border-bottom: 1px dotted #cccccc;
+	padding-bottom: 10px
+
+}
+
+.grid-view-jt-tabs-module .video-entry-jt-tabs-module {
+	width:300px;
+	
+
+}
+
+.grid-view-jt-tabs-module .video-entry-jt-tabs-module {
+	vertical-align:baseline;
+}
+
+.v90WrapperOuter-jt-tabs-module {
+	border:1px solid #999999;
+	width:92px;
+}
+
+.v120WideEntry-jt-tabs-module{
+	display: block;	
+}
+
+.v120WrapperOuter-jt-tabs-module {
+	border:1px solid #999999;
+	width:122px;
+	display: inline;
+	float: left;
+}
+
+.v150WrapperOuter-jt-tabs-module {
+	border:1px solid #999999;
+	width:152px;
+}
+
+.v90WrapperInner-jt-tabs-module {
+	border:1px solid #FFFFFF;
+	height:54px;
+	overflow:hidden;
+	width:90px;
+}
+
+.v120WrapperInner-jt-tabs-module {
+	border:1px solid #FFFFFF;
+	height:72px;
+	overflow:hidden;
+	width:120px;
+}
+
+.v150WrapperInner-jt-tabs-module {
+	border:1px solid #FFFFFF;
+	height:72px;
+	overflow:hidden;
+	width:150px;
+}
+
+.v120WrapperInner-jt-tabs-module img {
+
+}
+
+.vimg90-jt-tabs-module {
+	height:70px;
+	width:90px;
+	padding:0px;
+	margin-top:-10px;
+}
+
+.vimg120-jt-tabs-module {
+	height:90px;
+	width:120px;
+	padding:0px;
+	margin-top:-10px;
+}
+
+.vimg150-jt-tabs-module {
+	height:120px;
+	width:150px;
+	padding:0px;
+	margin-top:-20px;
+}
+
+.video-time-videolist-jt-tabs-module {
+	font-family:Arial,sans-serif;
+	margin-right:2px;
+	margin-top:-81px;
+	text-align:right;
+	white-space:nowrap;
+}
+
+.video-time-videolist-jt-tabs-module span {
+	-moz-border-radius-bottomleft:1px;
+	-moz-border-radius-bottomright:1px;
+	-moz-border-radius-topleft:1px;
+	-moz-border-radius-topright:1px;
+	background-color:#000000;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	height:14px;
+	opacity:0.65;
+	padding:0 4px;
+}
+
+#video-metadata{
+	display: inline;
+	float:right;
+	
+}
+
+#video-title-jt-tabs-module {
+	margin-top:2px;
+	height:32px;
+	line-height:16px;
+	overflow:hidden;
+	font-size:100%;
+	font-weight:bold;
+	margin-bottom:2px;
+	width: 142px;
+	margin-right:12px;
+	padding-right:6px;
+}
+
+#video-added-jt-tabs-module {
+	font-size:90%;
+	line-height:13px;
+}
+
+#video-from-jt-tabs-module {
+	font-size:90%;
+	line-height:13px;
+}
+
+.video-username-jt-tabs-module {
+	font-size:90%;
+	font-weight:bold;
+}
+
+#video-view-count-jt-tabs-module {
+	font-size:90%;
+	line-height:13px;
+	margin-bottom:1px;
+}
+
+#video-rating-jt-tabs-module {
+
+}
+
+#video-rating-jt-tabs-module span {
+	font-size:90%;
+}
+
+.rating-jt-tabs-module {
+	display:inline;
+	vertical-align:middle;
+}
+
+.starsize-jt-tabs-module120 {
+	width:12px;
+	height:12px;
+}
+
+.starsize-jt-tabs-module90 {
+	width:10px;
+	height:10px;
+}
+
+
+/*###########################################*/
+/*#### YOUTUBE STYLE VIDEO LIST COLUMNS END  */
+/*###########################################*/

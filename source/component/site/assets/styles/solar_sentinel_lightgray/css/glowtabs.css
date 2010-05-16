@@ -1,0 +1,98 @@
+/*###################################################*/
+/*############ GLOW TABS STYLE VIDEO LIST START      */
+/*###################################################*/
+#glowtabs-container {
+	margin-left: auto;
+	margin-right: auto;
+	width:30em;
+	margin-top:5px;
+}
+
+#glowingtabs{
+	/* float:left; */
+	font-size:100%;
+	/* line-height:normal;
+	border-bottom: 1px solid #d8d8d8; Add border strip to bottom of menu*/
+}
+
+#glowingtabs ul{
+	list-style-type: none;
+	margin:0;
+	margin-left: 3px; /*Left offset of entire tab menu relative to page*/
+	padding:0;
+}
+
+#glowingtabs li{
+	display:inline;
+	margin:0;
+	padding:0;
+}
+
+#glowingtabs a{
+	float:left;
+	/*background:url(../images/glowtab-left.png) no-repeat left top;*/
+	background:#ABC7E4 none repeat scroll 0 0;
+	color:#000000;
+	padding:5px 15px;
+	text-decoration:none;
+	margin:0;
+	margin-right: 3px; /*spacing between each tab*/
+	padding:0 0 0 9px;
+}
+
+#glowingtabs a span{
+	float:left;
+	display:block;
+	/*background:url(../images/glowtab.png) no-repeat right top;*/
+	padding: 4px 12px 2px 3px;
+	font-weight:bold;
+	color:#000000;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+	#glowingtabs a span {float:none;}
+/* End IE5-Mac hack */
+	#glowingtabs a:hover span {
+	color: #3B3B3B;
+}
+
+#glowingtabs #current a{ /*Selected Tab style*/
+	/*background-position:0 -37px;*/ /*Shift background image up to start of 2nd tab image*/
+	background:#FFFFFF none repeat scroll 0 0;
+	border:1px solid #ABC7E4;
+	color:#333366;
+}
+
+#glowingtabs #current a span{ /*Selected Tab style*/
+	background-position:100% -37px; /*Shift background image up to start of 2nd tab image*/
+	/*color: black;*/
+	text-decoration:none;
+}
+
+#glowingtabs a:hover{ /*onMouseover style*/
+	/*background-position:0% -74px;*/ /*Shift background image up to start of 2nd tab image*/
+	background: #41BCEA none repeat scroll 0 0;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+#glowingtabs a:hover span{ /*onMouseover style*/
+	background-position:100% -74px; /*Shift background image up to start of 2nd tab image*/
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+#glowingtabs #current a:hover span{ /*onMouseover style*/
+	background-position:100% -74px; /*Shift background image up to start of 2nd tab image*/
+	color:#000000;
+	text-decoration:none;
+}
+
+<!--[if IE]>
+	p.iepara{ /*Conditional CSS- For IE (inc IE7), create 1em spacing between menu and paragraph that follows*/
+	padding-top: 1em;
+}
+-->
+/*###################################################*/
+/*############ GLOW TABS STYLE VIDEO LIST END        */
+/*###################################################*/

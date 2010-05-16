@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="jomtubeplugin" group="thirdparty">
+	<name>Blip.tv</name>
+	<author>JomTube Team!</author>
+	<creationDate>May 2009</creationDate>
+	<copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@jomtube.com</authorEmail>
+	<url>http://blip.tv</url>
+	<version>1.0</version>
+	<description>Adds Blip video to JomTube</description>
+	<files>
+		<filename jomtubeplugin="blip">blip.php</filename>	
+		<filename jomtubeplugin="blip">icons/blip.gif</filename>
+		<filename jomtubeplugin="blip">images/blip.png</filename>
+	</files>
+	
+	<params>
+		<param name="autoregister" type="radio" default="1" label="Auto Create Users" description="PARAMAUTOCREATEUSERS">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

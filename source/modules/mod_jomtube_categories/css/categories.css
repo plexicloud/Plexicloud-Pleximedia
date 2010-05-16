@@ -1,0 +1,96 @@
+
+
+#main-cat-jtmodule {
+}
+
+/******** BULLETS FOR LIGHT BACKGROUND **********/
+ul.bullet-trianglelight-jtmodule, ul.bullet-squarelight-jtmodule, ul.bullet-pluslight-jtmodule, ul.bullet-dotlight-jtmodule, ul.bullet-arrowlight-jtmodule {
+	margin-left:1px !important;
+	overflow:hidden;
+	padding-left:5px !important;
+	margin-top:0; !important;
+	margin-bottom:0; !important;
+}
+
+ul.bullet-trianglelight-jtmodule li, ul.bullet-squarelight-jtmodule li, ul.bullet-pluslight-jtmodule li, ul.bullet-dotlight-jtmodule li, ul.bullet-arrowlight-jtmodule li {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin-bottom:2px !important;
+	padding-bottom:2px !important;
+	padding-left:10px !important;
+}
+
+ul.bullet-trianglelight-jtmodule li {
+	background:transparent url(../images/bullet-1.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-squarelight-jtmodule li {
+	background:transparent url(../images/bullet-2.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-pluslight-jtmodule li {
+	background:transparent url(../images/bullet-3.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-dotlight-jtmodule li {
+	background:transparent url(../images/bullet-4.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-arrowlight-jtmodule li {
+	background:transparent url(../images/bullet-5.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+/******** BULLETS FOR DARK BACKGROUND **********/
+ul.bullet-triangledark-jtmodule, ul.bullet-squaredark-jtmodule, ul.bullet-plusdark-jtmodule, ul.bullet-dotdark-jtmodule, ul.bullet-arrowdark-jtmodule {
+	margin-left:1px !important;
+	overflow:hidden;
+	padding-left:5px !important;
+	margin-top:0; !important;
+	margin-bottom:0; !important;
+}
+
+ul.bullet-triangledark-jtmodule li, ul.bullet-squaredark-jtmodule li, ul.bullet-plusdark-jtmodule li, ul.bullet-dotdark-jtmodule li, ul.bullet-arrowdark-jtmodule li {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin-bottom:2px !important;
+	padding-bottom:2px !important;
+	padding-left:10px !important;
+}
+
+ul.bullet-triangledark-jtmodule li {
+	background:transparent url(../images/bullet-1a.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-squaredark-jtmodule li {
+	background:transparent url(../images/bullet-2a.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-plusdark-jtmodule li {
+	background:transparent url(../images/bullet-3a.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-dotdark-jtmodule li {
+	background:transparent url(../images/bullet-4a.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+ul.bullet-arrowdark-jtmodule li {
+	background:transparent url(../images/bullet-5a.png) no-repeat scroll 0 7px !important;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+#cat-viewmore-jtmodule {
+	margin-top:1px;
+	text-align:center;
+	font:90%;
+}

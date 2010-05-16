@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.5.0">
+	<name>jomtube!</name>
+	<!-- The following elements are optional and free of formatting conttraints -->
+	<creationDate>April 2009</creationDate>
+	<author>Jomtube.com</author>
+	<authorEmail>team@jomtube.com</authorEmail>
+	<authorUrl>http://www.jomtube.com</authorUrl>
+	<copyright>Copyright 2008 Jomtube.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.5</version>
+	<description>jomtube! Component</description>
+    
+    <installfile>install.jomtube.php</installfile>
+    
+	<install folder="admin">
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.utf8.sql</file>
+			<file driver="mysql">sql/install.mysql.nonutf8.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall folder="admin">
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.utf8.sql</file>
+			<file driver="mysql">sql/uninstall.mysql.nonutf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>jomtube.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<filename>ajax.jomtube.php</filename>
+		
+		
+		<!-- HELPER -->
+		<filename>helpers/index.html</filename>
+		<filename>helpers/helpers.php</filename>
+		<filename>helpers/toolesHelpers.php</filename>
+		<!-- /HELPER -->
+		
+		<!-- MODELS -->
+		<filename>models/index.html</filename>
+		<filename>models/video.php</filename>
+		<filename>models/videos.php</filename>
+		<filename>models/categories.php</filename>				
+		<filename>models/video_display_settings.php</filename>
+		<!-- /MODELS -->
+		
+		<!-- LANGUAGES -->
+		<filename>languages/index.html</filename>
+		<filename>languages/languages.ini</filename>
+		<filename>languages/english.php</filename>
+		<filename>languages/french.php</filename>				
+		<filename>languages/german.php</filename>
+		<filename>languages/japanese.php</filename>
+		<filename>languages/polish.php</filename>
+		<filename>languages/spanish.php</filename>
+		<filename>languages/thai.php</filename>
+		<filename>languages/vietnam.php</filename>
+		<!-- /LANGUAGES -->					
+		
+		<!-- VIEWS -->
+		<filename>views/index.html</filename>		
+		
+		<filename>views/addvideo/index.html</filename>
+		<filename>views/addvideo/metadata.xml</filename>
+		<filename>views/addvideo/view.html.php</filename>
+		<filename>views/addvideo/tmpl/index.html</filename>
+		<filename>views/addvideo/tmpl/default.php</filename>
+		<filename>views/addvideo/tmpl/default.xml</filename>
+		
+		<filename>views/applylink/index.html</filename>
+		<filename>views/applylink/metadata.xml</filename>
+		<filename>views/applylink/view.html.php</filename>
+		<filename>views/applylink/tmpl/index.html</filename>
+		<filename>views/applylink/tmpl/default.php</filename>		
+		
+		<filename>views/videos/index.html</filename>
+		<filename>views/videos/metadata.xml</filename>
+		<filename>views/videos/view.html.php</filename>
+		<filename>views/videos/tmpl/index.html</filename>
+		<filename>views/videos/tmpl/default.php</filename>		
+		<filename>views/videos/tmpl/featured.xml</filename>
+		<filename>views/videos/tmpl/hightest.xml</filename>
+		<filename>views/videos/tmpl/viewed.xml</filename>
+		<filename>views/videos/tmpl/default.xml</filename>
+		<filename>views/videos/tmpl/featured.php</filename>
+		<filename>views/videos/tmpl/hightest.php</filename>
+		<filename>views/videos/tmpl/viewed.php</filename>
+		
+		<filename>views/categories/index.html</filename>
+		<filename>views/categories/metadata.xml</filename>
+		<filename>views/categories/view.html.php</filename>
+		<filename>views/categories/tmpl/index.html</filename>
+		<filename>views/categories/tmpl/default.php</filename>		
+				
+		<filename>views/video/index.html</filename>
+		<filename>views/video/metadata.xml</filename>
+		<filename>views/video/view.html.php</filename>		
+		<filename>views/video/tmpl/index.html</filename>
+		<filename>views/video/tmpl/default.php</filename>		
+		<filename>views/video/tmpl/video_player.php</filename>
+		
+		<filename>views/uploadvideo/index.html</filename>
+		<filename>views/uploadvideo/metadata.xml</filename>
+		<filename>views/uploadvideo/view.html.php</filename>
+		<filename>views/uploadvideo/tmpl/index.html</filename>
+		<filename>views/uploadvideo/tmpl/default.php</filename>
+		<filename>views/uploadvideo/tmpl/default.xml</filename>
+		
+		<!-- /VIEWS -->
+			
+			
+		<!-- PLUGINS -->
+		<filename>plugins/index.html</filename>				
+		<filename>plugins/JomComment/comments.php</filename>		
+		<!-- /PLUGINS -->	
+		
+		
+		<!-- ASSETS -->
+		<filename>assets/index.html</filename>			
+		
+		<filename>assets/images/index.html</filename>
+		<filename>assets/images/emptyStar12x12.gif</filename>
+		<filename>assets/images/emptyStar16x16.gif</filename>
+		<filename>assets/images/halfStar12x12.gif</filename>
+		<filename>assets/images/halfStar16x16.gif</filename>
+		<filename>assets/images/fullStar12x12.gif</filename>
+		<filename>assets/images/fullStar16x16.gif</filename>		
+		<filename>assets/images/arrow.png</filename>		
+        			
+		<filename>assets/js/index.html</filename>
+		<filename>assets/js/jomtube.js</filename>
+		<filename>assets/js/jomtubeajax.js</filename>
+		<filename>assets/js/mootools-release-1.11.js</filename>
+		<filename>assets/js/swfobject.js</filename>
+		
+		<filename>assets/lib/index.html</filename>
+		<filename>assets/lib/mix.php</filename>		
+		<filename>assets/lib/classes/comments.class.php</filename>		
+		
+		<filename>assets/swf/player.swf</filename>
+		<filename>assets/swf/index.html</filename>	
+		<filename>assets/swf/YouTube_Multi-Format.html</filename>
+		<filename>assets/swf/YouTube_Multi-Format.php</filename>
+		<filename>assets/swf/yt.swf</filename>
+		<filename>assets/swf/skins/index.html</filename>
+		<filename>assets/swf/skins/bekle.swf</filename>
+		<filename>assets/swf/skins/bluemetal.swf</filename>
+		<filename>assets/swf/skins/dangdang.swf</filename>		
+		<filename>assets/swf/skins/metarby10.swf</filename>		
+		<filename>assets/swf/skins/modieus.swf</filename>
+		<filename>assets/swf/skins/nacht.swf</filename>		
+		<filename>assets/swf/skins/snel.swf</filename>
+		<filename>assets/swf/skins/stylish_slim.swf</filename>		  
+		
+		<!--style-->
+		<filename>assets/styles/index.html</filename>
+		<filename>assets/styles/styles.ini</filename>
+			
+		<filename>assets/styles/babyblue/index.html</filename>
+		<filename>assets/styles/babyblue/images/arrow3.jpg</filename>
+		<filename>assets/styles/babyblue/images/index.html</filename>
+		<filename>assets/styles/babyblue/images/glowtab.png</filename>
+		<filename>assets/styles/babyblue/images/glowtab-left.png</filename>
+		<filename>assets/styles/babyblue/images/jomtubemaster.png</filename>	
+	    <filename>assets/styles/babyblue/css/index.html</filename>
+		<filename>assets/styles/babyblue/css/category.css</filename>		
+		<filename>assets/styles/babyblue/css/glowtabs.css</filename>		
+		<filename>assets/styles/babyblue/css/template.css</filename>	
+		<filename>assets/styles/babyblue/css/videolist.css</filename>	
+		<filename>assets/styles/babyblue/css/videoplayer.css</filename>
+		
+		<filename>assets/styles/black/index.html</filename>
+		<filename>assets/styles/black/images/glowtab.gif</filename>
+		<filename>assets/styles/black/images/index.html</filename>
+		<filename>assets/styles/black/images/glowtab-left.gif</filename>
+		<filename>assets/styles/black/images/searchblackbg.gif</filename>
+		<filename>assets/styles/black/images/searchblackbgL.gif</filename>	
+		<filename>assets/styles/black/images/searchblackbgR.gif</filename>	
+	    <filename>assets/styles/black/css/index.html</filename>
+		<filename>assets/styles/black/css/category.css</filename>		
+		<filename>assets/styles/black/css/glowtabs.css</filename>		
+		<filename>assets/styles/black/css/template.css</filename>	
+		<filename>assets/styles/black/css/videolist.css</filename>	
+		<filename>assets/styles/black/css/videoplayer.css</filename>
+			
+		<filename>assets/styles/meridian_blue/index.html</filename>
+		<filename>assets/styles/meridian_blue/images/glowtab.gif</filename>
+		<filename>assets/styles/meridian_blue/images/index.html</filename>
+		<filename>assets/styles/meridian_blue/images/glowtab-left.gif</filename>
+		<filename>assets/styles/meridian_blue/images/jometubemaster.png</filename>
+	    <filename>assets/styles/meridian_blue/css/index.html</filename>
+		<filename>assets/styles/meridian_blue/css/category.css</filename>		
+		<filename>assets/styles/meridian_blue/css/glowtabs.css</filename>		
+		<filename>assets/styles/meridian_blue/css/template.css</filename>	
+		<filename>assets/styles/meridian_blue/css/videolist.css</filename>	
+		<filename>assets/styles/meridian_blue/css/videoplayer.css</filename>	
+		
+		<filename>assets/styles/solar_sentinel_lightgray/index.html</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/solar_sentinel_lightgray.png</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/images/arrow3.jpg</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/images/index.html</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/images/glowtab.png</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/images/glowtab-left.gif</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/images/searchbar.png</filename>
+	    <filename>assets/styles/solar_sentinel_lightgray/css/index.html</filename>
+		<filename>assets/styles/solar_sentinel_lightgray/css/addvideo.css</filename>		
+		<filename>assets/styles/solar_sentinel_lightgray/css/category.css</filename>		
+		<filename>assets/styles/solar_sentinel_lightgray/css/glowtabs.css</filename>		
+		<filename>assets/styles/solar_sentinel_lightgray/css/template.css</filename>	
+		<filename>assets/styles/solar_sentinel_lightgray/css/videolist.css</filename>	
+		<filename>assets/styles/solar_sentinel_lightgray/css/videoplayer.css</filename>	
+		
+		<!-- /ASSETS -->		
+	</files>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		    <menu img="components/com_jomtube/assets/images/icon-16/jomtube16x16.png" link="option=com_jomtube&amp;view=configs">Jomtube!</menu>
+            <submenu>
+            <menu img="components/com_jomtube/assets/images/icon-16/config16x16.png " link="option=com_jomtube&amp;view=configs">Configuration</menu>				
+			<menu img="components/com_jomtube/assets/images/icon-16/category16x16.png" link="option=com_jomtube&amp;view=categories">Categories</menu>			
+			<menu img="components/com_jomtube/assets/images/icon-16/videos16x16.png" link="option=com_jomtube&amp;view=videos">Videos</menu>				
+			</submenu>
+
+		<files>
+			<filename>jomtube.xml</filename>
+		</files>
+
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>controller.php</filename>
+			<filename>jomtube.php</filename>			
+            
+            <!-- CONFIGS -->
+			<filename>configs/index.html</filename>
+			<filename>configs/configs.jomtube.php</filename>
+			<filename>configs/original_configs.jomtube.php</filename>	
+			<!-- /CONFIGS -->
+			
+            <!-- CONTROLLERS -->
+			<filename>controllers/index.html</filename>
+			<filename>controllers/videos.php</filename>
+			<filename>controllers/categories.php</filename>	
+			<filename>controllers/configs.php</filename>
+			<filename>controllers/import.php</filename>
+			<filename>controllers/plugins.php</filename>
+			<!-- /CONTROLLERS -->
+			    
+			<!-- MODELS -->
+			<filename>models/index.html</filename>
+			<filename>models/video.php</filename>
+			<filename>models/videos.php</filename>
+			<filename>models/category.php</filename>
+			<filename>models/categories.php</filename>			
+			<filename>models/video_display_settings.php</filename>	
+			<filename>models/uploadbatch.php</filename>	
+			<filename>models/plugins.php</filename>	
+			<!-- /MODELS -->
+			
+	
+			<!-- VIEWS -->
+			<filename>views/index.html</filename>
+
+			<filename>views/addvideo/index.html</filename>
+			<filename>views/addvideo/view.html.php</filename>
+			<filename>views/addvideo/tmpl/index.html</filename>
+			<filename>views/addvideo/tmpl/default.php</filename>
+
+			<filename>views/applylink/index.html</filename>
+			<filename>views/applylink/view.html.php</filename>
+			<filename>views/applylink/tmpl/index.html</filename>
+			<filename>views/applylink/tmpl/default.php</filename>
+
+			<filename>views/categories/index.html</filename>
+			<filename>views/categories/view.html.php</filename>
+			<filename>views/categories/tmpl/index.html</filename>
+			<filename>views/categories/tmpl/default.php</filename>
+
+			<filename>views/category/index.html</filename>
+			<filename>views/category/view.html.php</filename>
+			<filename>views/category/tmpl/index.html</filename>
+			<filename>views/category/tmpl/default.php</filename>
+			
+			<filename>views/uploadbatch/index.html</filename>
+			<filename>views/uploadbatch/view.html.php</filename>
+			<filename>views/uploadbatch/tmpl/index.html</filename>
+			<filename>views/uploadbatch/tmpl/default.php</filename>
+			
+			<filename>views/video/index.html</filename>
+			<filename>views/video/view.html.php</filename>
+			<filename>views/video/tmpl/index.html</filename>
+			<filename>views/video/tmpl/default.php</filename>
+			
+			<filename>views/videos/index.html</filename>
+			<filename>views/videos/view.html.php</filename>
+			<filename>views/videos/tmpl/index.html</filename>
+			<filename>views/videos/tmpl/default.php</filename>
+			
+			<filename>views/configs/index.html</filename>
+			<filename>views/configs/view.html.php</filename>
+			<filename>views/configs/tmpl/index.html</filename>			
+			<filename>views/configs/tmpl/access.php</filename>
+			<filename>views/configs/tmpl/batchupload.php</filename>
+			<filename>views/configs/tmpl/conversion.php</filename>
+			<filename>views/configs/tmpl/custom_module.php</filename>
+			<filename>views/configs/tmpl/default.php</filename>
+			<filename>views/configs/tmpl/display.php</filename>
+			<filename>views/configs/tmpl/integration.php</filename>
+			<filename>views/configs/tmpl/setup.php</filename>
+			<filename>views/configs/tmpl/player.php</filename>
+			<filename>views/configs/tmpl/upload.php</filename>
+			<filename>views/configs/tmpl/positions.php</filename>
+			
+			<filename>views/import/index.html</filename>
+			<filename>views/import/view.html.php</filename>
+			<filename>views/import/tmpl/index.html</filename>
+			<filename>views/import/tmpl/default.php</filename>
+			<filename>views/import/tmpl/hwd.php</filename>
+			<filename>views/import/tmpl/seyret.php</filename>
+			
+			<filename>views/languages/index.html</filename>
+			<filename>views/languages/view.html.php</filename>
+			<filename>views/languages/tmpl/index.html</filename>
+			<filename>views/languages/tmpl/default.php</filename>	
+			
+            <filename>views/plugin/index.html</filename>
+			<filename>views/plugin/view.html.php</filename>
+			<filename>views/plugin/tmpl/index.html</filename>
+			<filename>views/plugin/tmpl/default.php</filename>	
+					
+            <filename>views/plugins/index.html</filename>
+			<filename>views/plugins/view.html.php</filename>
+			<filename>views/plugins/tmpl/index.html</filename>
+			<filename>views/plugins/tmpl/default.php</filename>			
+			<filename>views/plugins/tmpl/languages.php</filename>			
+			<filename>views/plugins/tmpl/templates.php</filename>			
+			<filename>views/plugins/tmpl/videoserver.php</filename>			
+			
+            <filename>views/templates/index.html</filename>
+			<filename>views/templates/view.html.php</filename>
+			<filename>views/templates/tmpl/index.html</filename>
+			<filename>views/templates/tmpl/default.php</filename>						
+			<!-- /VIEWS -->									
+			
+			<!-- HELPERS -->
+			<filename>helpers/index.html</filename>			
+			<filename>helpers/JomTubeInstaller.php</filename>
+			<filename>helpers/JTubePluginHelper.php</filename>			
+			<filename>helpers/adapters/index.html</filename>			
+			<filename>helpers/adapters/jomtubeplugin.php</filename>			
+			<!-- /HELPERS -->
+			
+			<!-- INCLUDES -->
+			<filename>includes/index.html</filename>			
+			<filename>includes/jomtube_remotevideo.php</filename>
+			<filename>includes/Snoopy.class.php</filename>			
+			<!-- /INCLUDES -->
+			
+			<!-- TABLES -->
+			<filename>tables/index.html</filename>
+			<filename>tables/jomtube_videos.php</filename>
+			<filename>tables/jomtube_categories.php</filename>		
+			<filename>tables/jomtube_plugins.php</filename>		
+			<!-- /TABLES -->
+			
+			<!-- PLUGINS -->
+			<filename>plugins/index.html</filename>
+           
+            <filename>plugins/videoserver/index.html</filename>
+            					
+			<filename>plugins/videoserver/jwscript/Google_URI.php</filename>
+			<filename>plugins/videoserver/jwscript/YouTube_Multi-Format.php</filename>
+						
+			<filename>plugins/videoserver/clipser.php</filename>
+			<filename>plugins/videoserver/clipser.xml</filename>			
+			<filename>plugins/videoserver/icons/clipser.gif</filename>
+			<filename>plugins/videoserver/images/clipser.png</filename>
+			<filename>plugins/videoserver/supported/clipser.gif</filename>
+			
+			<filename>plugins/videoserver/dailymotion.php</filename>
+			<filename>plugins/videoserver/dailymotion.xml</filename>
+			<filename>plugins/videoserver/icons/dailymotion.gif</filename>
+			<filename>plugins/videoserver/images/dailymotion.png</filename>
+			<filename>plugins/videoserver/supported/dailymotion.gif</filename>
+			
+			<filename>plugins/videoserver/blip.php</filename>
+			<filename>plugins/videoserver/blip.xml</filename>						
+			<filename>plugins/videoserver/icons/blip.gif</filename>
+			<filename>plugins/videoserver/images/blip.png</filename>
+			<filename>plugins/videoserver/supported/blip.gif</filename>
+			
+			<filename>plugins/videoserver/google.php</filename>
+			<filename>plugins/videoserver/google.xml</filename>			
+			<filename>plugins/videoserver/icons/google.gif</filename>
+			<filename>plugins/videoserver/images/google.png</filename>
+			<filename>plugins/videoserver/supported/google.gif</filename>
+			
+			<filename>plugins/videoserver/metacafe.php</filename>
+			<filename>plugins/videoserver/metacafe.xml</filename>			
+			<filename>plugins/videoserver/icons/metacafe.gif</filename>
+			<filename>plugins/videoserver/images/metacafe.png</filename>
+			<filename>plugins/videoserver/supported/metacafe.gif</filename>
+			
+			<filename>plugins/videoserver/revver.php</filename>
+			<filename>plugins/videoserver/revver.xml</filename>			
+			<filename>plugins/videoserver/icons/revver.gif</filename>
+			<filename>plugins/videoserver/images/revver.png</filename>
+			<filename>plugins/videoserver/supported/revver.gif</filename>			
+			
+			<filename>plugins/videoserver/youtube.php</filename>
+			<filename>plugins/videoserver/youtube.xml</filename>			
+			<filename>plugins/videoserver/icons/youtube.gif</filename>
+			<filename>plugins/videoserver/images/youtube.png</filename>
+			<filename>plugins/videoserver/supported/youtube.gif</filename>						
+			
+			<filename>plugins/videoserver/vimeo.php</filename>
+			<filename>plugins/videoserver/vimeo.xml</filename>			
+			<filename>plugins/videoserver/icons/vimeo.gif</filename>
+			<filename>plugins/videoserver/images/vimeo.png</filename>
+			<filename>plugins/videoserver/supported/vimeo.gif</filename>
+			<!-- /PLUGINS -->	
+			
+			<!-- ASSETS -->
+    		<filename>assets/index.html</filename>		
+    		
+    		<filename>assets/css/index.html</filename>
+    		<filename>assets/css/styles.css</filename>		    		
+    		
+    		<filename>assets/images/index.html</filename>
+    		    		    		    	    		
+    		<filename>assets/images/icon-16/index.html</filename>
+    		<filename>assets/images/icon-16/add16x16.png</filename>
+    		<filename>assets/images/icon-16/category16x16.png</filename>
+    		<filename>assets/images/icon-16/config16x16.png</filename>
+    		<filename>assets/images/icon-16/jomtube16x16.png</filename>
+    		<filename>assets/images/icon-16/videos16x16.png</filename>
+    		<filename>assets/images/icon-16/plugin16x16.png</filename>
+    		<filename>assets/images/icon-16/import16x16.png</filename>
+    		
+    		<filename>assets/images/icon-32/index.html</filename>
+    		<filename>assets/images/icon-32/add_category.png</filename>
+    		<filename>assets/images/icon-32/batch_upload.png</filename>
+    		<filename>assets/images/icon-32/category_edit.png</filename>
+    		<filename>assets/images/icon-32/delete_category.png</filename>
+    		<filename>assets/images/icon-32/local_add.png</filename>    		
+    		<filename>assets/images/icon-32/remote_add.png</filename>
+    		<filename>assets/images/icon-32/video_delete.png</filename>
+    		<filename>assets/images/icon-32/video_edit.png</filename>
+    		<filename>assets/images/icon-32/plug_add.png</filename>
+    		<filename>assets/images/icon-32/import1.png</filename>
+    		
+    		<filename>assets/images/icon-48/index.html</filename>
+    		<filename>assets/images/icon-48/categories.png</filename>
+    		<filename>assets/images/icon-48/configuration.png</filename>
+    		<filename>assets/images/icon-48/videos.png</filename>  
+    		
+    		<filename>assets/images/delete.png</filename>
+    		<filename>assets/images/tick.png</filename>  		    		
+    		<filename>assets/images/no-thumbnail.jpg</filename>  		    		
+    		<filename>assets/images/question.png</filename>  		    		
+    			
+    		<filename>assets/js/index.html</filename>
+    		<filename>assets/js/form_controls.js</filename>
+    		<filename>assets/js/jomtube.js</filename>
+    		
+    		<filename>assets/lib/index.html</filename>
+    		<filename>assets/lib/FlashUploader/index.html</filename>
+    		<filename>assets/lib/FlashUploader/tmp/index.html</filename>
+    		<filename>assets/lib/FlashUploader/uploads/index.html</filename>
+    		<filename>assets/lib/FlashUploader/config.php</filename>  		
+    		<filename>assets/lib/FlashUploader/custom2.xml</filename>
+    		<filename>assets/lib/FlashUploader/expressinstall.swf</filename>
+    		<filename>assets/lib/FlashUploader/SolmetraUploader.js</filename>
+    		<filename>assets/lib/FlashUploader/SolmetraUploader.php</filename>
+    		<filename>assets/lib/FlashUploader/swfobject.js</filename>
+    		<filename>assets/lib/FlashUploader/upload.php</filename>
+    		<filename>assets/lib/FlashUploader/uploader.swf</filename>
+    		<filename>assets/lib/FlashUploader/uploader.xml</filename>
+    		<!-- /ASSETS -->
+		
+			<!-- SQL -->
+			<filename>sql/install.mysql.utf8.sql</filename>
+			<filename>sql/install.mysql.nonutf8.sql</filename>
+			<filename>sql/uninstall.mysql.utf8.sql</filename>
+			<filename>sql/uninstall.mysql.nonutf8.sql</filename>
+			<!-- /SQL -->
+		</files>
+	</administration>
+</install>

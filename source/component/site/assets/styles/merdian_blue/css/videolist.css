@@ -1,0 +1,223 @@
+/*###########################################*/
+/*############ YOUTUBE SEARCH FORM START     */
+/*###########################################*/
+#masthead {
+margin:0px auto 0;
+padding-bottom:15px;
+/*width:950px;*/
+}
+
+#masthead .bar {
+float:left;
+height:35px;
+width:100%;
+}
+
+#masthead .bar .leftcap {
+background:transparent url(../images/jomtubemaster.png) no-repeat scroll -132px 0;
+display:block;
+float:left;
+height:37px;
+width:5px;
+}
+
+#masthead .search-bar {
+background:transparent url(../images/jomtubemaster.png) repeat-x scroll 0 -63px;
+border:medium none;
+float:left;
+height:37px;
+padding:0;
+width:98.5%;
+}
+
+#masthead .bar .rightcap {
+background:transparent url(../images/jomtubemaster.png) no-repeat scroll -137px 0;
+display:block;
+float:left;
+height:37px;
+width:5px;
+}
+
+#masthead #search-form {
+display:block;
+float:left;
+height:30px;
+margin:0;
+padding:7px 10px 0 300px;
+}
+
+#masthead #search-term {
+border:1px solid #CCCCCC;
+display:inline;
+font-size:13px !important;
+margin-right:4px;
+padding:2px 0 3px;
+vertical-align:top;
+width:211px;
+font-size: 13px !important;
+}
+
+/*###########################################*/
+/*############ YOUTUBE SEARCH FORM END       */
+/*###########################################*/
+
+/*###########################################*/
+/*############ YOUTUBE STYLE SUBMENU START   */
+/*###########################################*/
+
+#videoModifiers {
+	border-top:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	padding:5px 0;
+	text-align:center;
+	margin-bottom:10px;
+	float:left;
+	width:99%;
+}
+
+#videoModifiers .selected {
+	font-weight:bold;
+}
+
+#videoModifiers div.subcategory {
+	border-left:1px solid #CCCCCC;
+	display:inline;
+	padding:0 10px;
+}
+
+#videoModifiers div.first {
+	border-left:0 none;
+	padding:0 10px 0 2px;
+}
+
+/*###########################################*/
+/*############ YOUTUBE STYLE SUBMENU END     */
+/*###########################################*/
+
+
+/*###########################################*/
+/*#### YOUTUBE STYLE VIDEO LIST COLUMNS START*/
+/*###########################################*/
+
+#vl_container {
+	float:left;
+	width:100%;
+}
+
+.vlcell {
+	display:inline;
+	float:left;
+	width:24.9%;
+	margin-bottom:5px;
+	margin-top: 5px;
+	overflow:auto;
+}
+.vlentry {
+	float:left;
+	width:120px;
+}
+
+.vlcontainer {
+	width:auto;
+}
+
+.v120WrapperOuter, .videoIconWrapperOuter {
+	border:1px solid #999999;
+	width:122px;
+}
+
+.videoIconWrapperInner, .v120WrapperInner {
+	border:1px solid #FFFFFF;
+	height:72px;
+	overflow:hidden;
+	width:120px;
+}
+
+.image_125 {
+	width:125px;
+	height:80px;
+}
+
+.addtoQL90 {
+	margin-left:0px;
+	margin-top:-24px;
+	padding:1px;
+	text-align:left;
+	width:100%;
+}
+
+.vldescbox {
+	font-size:11px;
+	font-weight:bold;
+	margin-top:5px;
+}
+
+.vlshortTitle {
+	height:32px;
+	line-height:16px;
+	overflow:hidden;
+	font-size:100%;
+	font-weight:bold;
+	margin-bottom:2px;
+}
+
+.vlfacets {
+	color:#666666;
+	font-size:90%;
+	line-height:13px;
+}
+
+.vladdby {
+	font-size:90%;
+	font-weight:bold;
+}
+
+.grayText {
+	color:#666666;
+	font-size:90%;
+}
+
+.clearL {
+	clear:left;
+}
+
+.clearboth {
+	clear:both;
+}
+
+.video-thumb-duration-rating div {
+	margin-top:0px;
+}
+
+.totalvidhits {
+	margin-bottom:2px;
+}
+
+/*###########################################*/
+/*#### YOUTUBE STYLE VIDEO LIST COLUMNS END  */
+/*###########################################*/
+
+
+/*###########################################*/
+/*########### YOUTUBE STYLE PAGINATION START */
+/*###########################################*/
+#pagination_container {
+	float:left;
+	margin:4px auto 0;
+	padding-bottom:15px;
+	width:99%;
+}
+
+#video_pagination {
+	text-align:center;
+}
+
+#totalvideos {
+	padding-top:8px;
+	font-size:90%;
+	color:#666666;
+}
+
+/*###########################################*/
+/*########### YOUTUBE STYLE PAGINATION END */
+/*###########################################*/

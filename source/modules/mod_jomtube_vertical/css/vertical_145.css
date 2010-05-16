@@ -1,0 +1,76 @@
+/*###########################################*/
+/*#### YOUTUBE STYLE VIDEO LIST COLUMNS START*/
+/*###########################################*/
+
+#v145_container {
+margin:0 auto;
+width:145px;
+padding-top:3px;
+}
+
+.v145WideEntry {
+}
+
+.v145WrapperOuter {
+	border:1px solid #999999;
+	width:145px;
+}
+
+.v145WrapperInner {
+	border:1px solid #FFFFFF;
+	height:72px;
+	overflow:hidden;
+	width:143px;
+}
+
+.image_145 {
+	width:145px;
+	height:80px;
+}
+
+#v145titlecontainer {
+	border-bottom:1px dotted #CCCCCC;
+	margin-bottom:5px;
+}
+
+.v145shortTitle {
+font-size:11px;
+font-weight:bold;
+max-height:32px;
+margin-bottom:2px;
+overflow:hidden;
+}
+
+#v145facets {
+color:#666666;
+font-size:9px;
+line-height:13px;
+margin-bottom:4px
+}
+
+.v145addby {
+font-size:9px;
+font-weight:bold;
+}
+
+.video-time-145 {
+font-family:Arial,sans-serif;
+margin-right:0px;
+margin-top:-81px;
+text-align:right;
+white-space:nowrap;
+}
+
+.video-time-145 span {
+-moz-border-radius-bottomleft:1px;
+-moz-border-radius-bottomright:1px;
+-moz-border-radius-topleft:1px;
+-moz-border-radius-topright:1px;
+background-color:#000000;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+height:18px;
+opacity:0.75;
+padding:0 4px;
+}

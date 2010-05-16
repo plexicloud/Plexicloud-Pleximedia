@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<view title="Upload Video" hidden="false">
+		<message>Upload local video to component</message>
+	</view>
+</metadata>

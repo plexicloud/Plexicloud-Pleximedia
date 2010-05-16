@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+@IMPORT url("category.css");
+@IMPORT url("videolist.css");
+@IMPORT url("videoplayer.css");
+@IMPORT url("glowtabs.css");
+
+#videomainbody {
+float:left;
+margin-left:auto;
+margin-right:auto;
+position:relative;
+}
+
+#videoright-column {
+	float:left;
+	margin-right:0;
+	margin-top:4px;
+	width:160px;
+	border-left:1px dotted #CCCCCC;
+	overflow:hidden;
+	padding-left:10px;
+}
+
+#videomiddle-column {
+	float:left;
+	width:600px;
+	margin-left:10px;
+}
+
+#videoleft-column {
+	float:left;
+	margin-left:0;
+	margin-top:4px;
+	width:160px;
+	border-right:1px dotted #CCCCCC;
+	overflow:hidden;
+	padding-right:10px;
+}
+
+#module-padding {
+	margin-bottom:15px;
+}
+
+.clearL {
+clear:left;
+}
+
+.clearboth {
+clear:both;
+}
+
+.clearfix {
+clear:both;
+}
+
+

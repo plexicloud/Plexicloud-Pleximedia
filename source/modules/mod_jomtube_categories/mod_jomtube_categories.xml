@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Video Categories</name>
+	<author>Jomtube</author>
+	<creationDate>2009-06-09</creationDate>
+	<copyright>Copyright (C) 2009 All rights reserved by Subfighter.com</copyright>
+	<license>http://www.jomtube.com</license>
+	<authorEmail>jomtube.com@gmail.com</authorEmail>
+	<authorUrl>jomtube.com</authorUrl>
+	<version>1.2 Beta</version>
+	<description>Display Your Categories and Sub-Categoreis in a Jomtube Modules</description>
+	<files>
+		<filename module="mod_jomtube_categories">mod_jomtube_categories.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>css/index.html</filename>
+		<filename>css/categories.css</filename>
+		<filename>images/index.html</filename>
+		<filename>images/bullet-1.png</filename>
+		<filename>images/bullet-2.png</filename>
+		<filename>images/bullet-3.png</filename>
+		<filename>images/bullet-4.png</filename>
+		<filename>images/bullet-5.png</filename>
+		<filename>images/bullet-1a.png</filename>
+		<filename>images/bullet-2a.png</filename>
+		<filename>images/bullet-3a.png</filename>
+		<filename>images/bullet-4a.png</filename>
+		<filename>images/bullet-5a.png</filename>
+		<filename>images/viewmore.png</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="jomtube_itemid" type="text" size="6" label="JomTube Itemid" description="Enter the Itemid of your JomTube menu link. This will allow the module to link to the correct video page." />
+        <param name="style" type="list" default="7" label="Display Style" description="Choose the style of the display">
+            <option value="0">Inline Dot Separated List (Horizontal)</option>
+            <option value="1">Inline Pipe Separated List (Horizontal)</option>
+            <option value="2">Inline Dash Separated List (Horizontal)</option>
+            <option value="3">Light Background Bullet Triangle (Vertical)</option>
+            <option value="4">Light Background Bullet Square (Vertical)</option>
+            <option value="5">Light Background Bullet Plus Sign (Vertical)</option>
+            <option value="6">Light Background Bullet Dot (Vertical)</option>
+            <option value="7">Light Background Bullet Arrow (Vertical)</option>
+            <option value="8">Dark Background Bullet Triangle (Vertical)</option>
+            <option value="9">Dark Background Bullet Square (Vertical)</option>
+            <option value="10">Dark Background Bullet Plus Sign (Vertical)</option>
+            <option value="11">Dark Background Bullet Dot (Vertical)</option>
+            <option value="12">Dark Background Bullet Arrow (Vertical)</option>
+        </param>
+        <param name="order" type="list" default="category_name" label="Ordering" description="There are 2 ways to order categories">
+			<option value="ordering">Ordering Field</option>
+			<option value="category_name">Alphabetically</option>
+		</param>
+        <param name="show_subs" type="list" default="0" label="Show Subcategories" description="Choose to display subcategories">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="show_morelink" type="list" default="1" label="Display View More" description="This Will Show/Hide The View More Categories Link At The Bottom of Module">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </param>
+        <param name="textalign" type="list" default="right" label="Text Alignment" description="This Will Align the View More Cateogories link.">
+            <option value="left">Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+        </param>
+    </params>
+</install>

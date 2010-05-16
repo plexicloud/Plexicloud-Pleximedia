@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Lastest Videos">
+		<message>
+		</message>
+	</layout>
+	<state>
+		<name>Video List Layout</name>		
+	</state>
+</metadata>

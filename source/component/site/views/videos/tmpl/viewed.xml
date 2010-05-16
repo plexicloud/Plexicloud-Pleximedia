@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Most Viewed Videos">
+		<message>
+			<![CDATA[This is a most viewed videos list.]]>
+		</message>
+	</layout>	
+</metadata>

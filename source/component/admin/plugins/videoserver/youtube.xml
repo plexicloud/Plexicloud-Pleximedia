@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="jomtubeplugin" group="thirdparty">
+	<name>YouTube</name>
+	<author>JomTube Team!</author>
+	<creationDate>May 2009</creationDate>
+	<copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@jomtube.com</authorEmail>
+	<url>http://youtube.com</url>
+	<version>1.0</version>
+	<description>Adds YouTube video to JomTube</description>
+	<files>
+		<filename jomtubeplugin="youtube">youtube.php</filename>
+		<filename jomtubeplugin="youtube">jwscript/YouTube_Multi-Format.php</filename>
+		<filename jomtubeplugin="youtube">icons/youtube.gif</filename>
+		<filename jomtubeplugin="youtube">images/youtube.png</filename>
+	</files>
+	
+	<params>
+		<param name="usejwplayer" type="radio" default="1" label="Use JW Player" description="Use JW Player">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="downloadable" type="radio" default="1" label="Downloadable" description="Downloadable">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

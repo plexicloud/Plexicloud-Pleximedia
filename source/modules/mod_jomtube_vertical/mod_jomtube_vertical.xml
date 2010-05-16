@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Vertical JomTube Module</name>
+	<author>Jomtube.com</author>
+	<creationDate>2008-10-25</creationDate>
+	<copyright>All rights reserved by Your Company.</copyright>
+	<license>GPL 2.0</license>
+	<authorEmail>manhtl@gmail.com</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.1.0</version>
+	<description>Basic Jomtube Modules</description>
+	<files>
+		<filename module="mod_jomtube_vertical">mod_jomtube_vertical.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>css/vertical_145.css</filename>
+	</files>
+
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+
+                  <param name="numvideos" type="text" default="8" label="Number Videos" description="Limit number for show" />
+                  <param name="displaymode" type="list" default="L" label="Display" description="There are 3 ways of display for this module">
+			<option value="L">Latest Video</option>
+			<option value="V">Most Viewed</option>
+			<option value="R">Highest Related</option>
+			<option value="F">Featured</option>
+		</param>
+    </params>
+</install>

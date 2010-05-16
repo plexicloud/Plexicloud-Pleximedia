@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="jomtubeplugin" group="thirdparty">
+	<name>Dailymotion.com</name>
+	<author>JomTube Team!</author>
+	<creationDate>May 2009</creationDate>
+	<copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@jomtube.com</authorEmail>
+	<url>http://dailymotion.com</url>
+	<version>1.0</version>
+	<description>Adds Dailymotion video to JomTube</description>
+	<files>
+		<filename jomtubeplugin="dailymotion">dailymotion.php</filename>		
+		<filename jomtubeplugin="dailymotion">icons/dailymotion.gif</filename>
+		<filename jomtubeplugin="dailymotion">images/dailymotion.png</filename>
+	</files>
+	
+	<params>
+		<param name="usejwplayer" type="radio" default="1" label="Use JW Player" description="Use JW Player">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="downloadable" type="radio" default="1" label="Downloadable" description="Downloadable">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

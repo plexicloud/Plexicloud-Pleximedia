@@ -1,0 +1,493 @@
+/*###########################################*/
+/*########## YOUTUBE STYLE VIDEO PLAYER PAGE */
+/*###########################################*/
+#watch-vid-title-container {
+	position:relative;
+}
+
+#jomtube_container {
+	padding: 0px;
+	margin: 0px;
+	width:100%;
+}
+
+.jomtube_wrapper {
+	width: auto;
+	margin: 0px auto 0px 0px;
+}
+
+#watch-vid-title {
+	font-size:18px;
+	font-weight:bold;
+	margin:4px;
+}
+
+#watch-vid-category {
+	position:absolute;
+	right:12px;
+	top:-24px;
+}
+
+#watch-this-vid {
+	float: left;
+	border:1px solid #cccccc;
+}
+
+#watch-ratings-views {
+	float: left;
+	margin-top:10px;
+}
+
+#ratings-container {
+	float: left;
+	border:1px solid #cccccc;
+	width:100%;
+	padding-top:6px;
+	padding-bottom:6px;
+	margin-bottom:5px;
+}
+
+#video-rating {
+	float: left;
+	margin-left:5px;
+}
+
+#video-views {
+	float: right;
+	margin-right:5px;
+}
+
+.jomtube_ajaxrating {
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 5px;
+	width:50%;
+}
+
+.jomtube_views {
+	float: right;
+	right-top:1px;
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+.jomtube_rating {
+	float: left;
+	font-size: 16px;
+	margin-left: 5px;
+}
+
+.jomtuberatingcount {
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.jomtube_ratingStars {
+
+}
+
+.jomtube_ratingThanks {
+	font-size: 9px;
+	font-style: italic;
+	font-weight: normal;
+	padding-right: 5px;
+}
+
+#vidinfocontainer {
+	float: left;
+	width: 100%;
+	border:1px solid #cccccc;
+}
+
+#author-container {
+	float: left;
+	border-bottom:1px dotted #cccccc;
+	width:100%;
+	padding-top:3px;
+	padding-bottom:5px;
+}
+
+.hand, label {
+	cursor:pointer;
+}
+
+#video-author {
+	float: left;
+	margin-left:6px;
+	margin-bottom:5px;
+}
+
+#duration-category {
+	right:1px;
+	float: right;
+	margin-right:6px;
+}
+
+#description-container {
+	float: left;
+	border-bottom:1px dotted #cccccc;
+	width:100%;
+	padding-top:6px;
+	padding-bottom:6px;
+}
+
+#video-desc {
+	float: left;
+	margin-left:5px;
+	width:99%;
+}
+
+#video-tags {
+	float: left;
+	margin-left:5px;
+	width:99%;
+}
+
+#embed-container {
+	float: left;
+	width:100%;
+	padding-top:6px;
+	padding-bottom:7px;
+}
+
+#video-link {
+	float: left;
+	margin-left:6px;
+	margin-bottom:5px;
+	width:99%;
+}
+
+#video-embed {
+	float: left;
+	margin-left:6px;
+	width:99%;
+}
+
+.videodirectlink {
+	position:relative;
+	border:1px solid #666666;
+	color:#999999;
+	font-size:10px;
+	left:20px;
+	margin-bottom:0px;
+	margin-top:0px;
+	width:90%;
+}
+
+.videoembedcode {
+	position:relative;
+	border:1px solid #666666;
+	color:#999999;
+	font-size:10px;
+	left:4px;
+	margin-bottom:0px;
+	margin-top:0px;
+	width:90%;
+}
+.floatL{float: left;}
+.floatR{float: right;}
+
+/*###########################################*/
+/*########## YOUTUBE STYLE WATCH RELATE VIDEO RIGHT COLUMN */
+/*###########################################*/
+
+#watch-other-vids {
+	float:right;
+	padding-right:10px;
+	width: 325px;
+}
+
+.watch-discoverbox {
+	overflow:auto;
+	padding-top:2px;
+}
+
+#video_lists {
+	overflow:auto;
+	padding:7px;
+	border:1px solid #e3e3e3;
+	height:326px;
+	width:288px;
+	margin:10px;
+}
+
+.video-entry {
+	margin:0 0 0px;
+}
+
+.v90WideEntry {
+	float:left;
+	line-height:14px;
+	text-align:left;
+	width: 82px;
+}
+
+.v90WrapperOuter {
+	border:1px solid #999999;
+	width:82px;
+}
+
+.v90WrapperInner {
+	border:1px solid #FFFFFF;
+	height:56px;
+	overflow:hidden;
+	width:80px;
+}
+
+.vimg90 {
+	border:1px solid #999999;
+	height:56px;
+	width:80px;
+}
+
+.v90WrapperInner img{
+	margin-top: 0px;
+}
+
+.video-main-content {
+	padding-left:90px;
+}
+
+.video-mini-title {
+	font-size:100%;
+	font-weight:bold;
+	height:28px;
+	overflow:hidden;
+	line-height:15px;
+}
+
+.video-view-count {
+	color:#666666;
+	font-size:90%;
+	height:13px;
+}
+
+.video-username {
+	color:#666666;
+	font-size:90%;
+}
+
+.video-time {
+	font-family:Arial,sans-serif;
+	margin-right:0px;
+	margin-top:-18px;
+	text-align:right;
+	white-space:nowrap;
+}
+
+.video-time span {
+	-moz-border-radius-bottomleft:1px;
+	-moz-border-radius-bottomright:1px;
+	-moz-border-radius-topleft:1px;
+	-moz-border-radius-topright:1px;
+	background-color:#000000;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	height:14px;
+	opacity:0.65;
+	padding:0 4px;
+}
+
+.video-time-125 {
+	font-family:Arial,sans-serif;
+	margin-right:0px;
+	margin-top:-81px;
+	text-align:right;
+	white-space:nowrap;
+}
+
+.video-time-125 span {
+	-moz-border-radius-bottomleft:1px;
+	-moz-border-radius-bottomright:1px;
+	-moz-border-radius-topleft:1px;
+	-moz-border-radius-topright:1px;
+	background-color:#000000;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	height:18px;
+	opacity:0.75;
+	padding:0 4px;
+}
+
+#watch-related-vids-body, #watch-featured-vids-body, #watch-channel-vids-body {
+padding-left:7px;
+}
+
+.watch-discoverbox-list-view, .watch-discoverbox-grid-view {
+padding-top:0;
+}
+
+.watch-discoverbox-list-view .watch-discoverbox, .watch-discoverbox-grid-view .watch-discoverbox {
+overflow:auto;
+padding-top:7px;
+}
+
+.watch-discoverbox-grid-view .watch-discoverbox-entry,
+.watch-discoverbox-list-view .watch-discoverbox-thumb{
+
+}
+
+.expand-panel.expanded .expand-content {
+display:block;
+}
+
+.browseListView .vldesc, #browseMain .browseListView .vladded, .browseListView .vllongTitle, .browseGridView .vlshortTitle, .membersListView .memberBoxList, .membersGridView .memberBoxGrid, .membersListView .memberBoxTypeContainerAlt, .membersGridView .memberBoxTypeContainer, .membersListView .vldesc, .membersListView .vlrecent, .membersGridView .vltitle, .membersListView .vltitlealt, .browseListView .searchFresh, .watch-discoverbox-list-view .watch-discoverbox-list-facet, .watch-discoverbox-list-view .watch-discoverbox-divider, .searchView .vladded, .browseListView .vldescbox .badges-thumb-box, .browseGridView .vlfacets .badges-thumb-box {
+display:block;
+}
+
+.smallText, .rating {
+font-size:11px;
+}
+
+.smallLabel {
+font-size:11px;
+}
+
+.hLink, .tagLink, .noul {
+text-decoration:none;
+}
+
+.vtitle {
+font-size:11px;
+font-weight:bold;
+height:32px;
+overflow:hidden;
+}
+
+.watch-body {
+	z-index: -12; 
+	border-right:1px solid #CCCCCC; 
+	border-left:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+/*	border-top:1px solid #CCCCCC; */
+	margin-bottom:20px;
+	width:100%;
+}
+
+#watch-related-vids-body, #watch-featured-vids-body, #watch-channel-vids-body {
+padding-left:7px;
+}
+
+.watch-discoverbox-list-view, .watch-discoverbox-grid-view {
+padding-top:0;
+}
+
+.watch-discoverbox-list-view .watch-discoverbox, .watch-discoverbox-grid-view .watch-discoverbox {
+overflow:auto;
+padding-top:7px;
+}
+
+.watch-discoverbox-grid-view .watch-discoverbox-entry,
+.watch-discoverbox-list-view .watch-discoverbox-thumb{
+
+}
+
+.expand-panel.expanded .expand-content {
+display:block;
+}
+
+.browseListView .vldesc, #browseMain .browseListView .vladded, .browseListView .vllongTitle, .browseGridView .vlshortTitle, .membersListView .memberBoxList, .membersGridView .memberBoxGrid, .membersListView .memberBoxTypeContainerAlt, .membersGridView .memberBoxTypeContainer, .membersListView .vldesc, .membersListView .vlrecent, .membersGridView .vltitle, .membersListView .vltitlealt, .browseListView .searchFresh, .watch-discoverbox-list-view .watch-discoverbox-list-facet, .watch-discoverbox-list-view .watch-discoverbox-divider, .searchView .vladded, .browseListView .vldescbox .badges-thumb-box, .browseGridView .vlfacets .badges-thumb-box {
+display:block;
+}
+
+.smallText, .rating {
+font-size:11px;
+}
+
+.smallLabel {
+font-size:11px;
+}
+
+.hLink, .tagLink, .noul {
+text-decoration:none;
+}
+
+.vtitle {
+font-size:11px;
+font-weight:bold;
+height:32px;
+overflow:hidden;
+}
+
+.watch-body {
+	z-index: -12; 
+	border-right:1px solid #CCCCCC; 
+	border-left:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+/*	border-top:1px solid #CCCCCC; */
+	margin-bottom:20px;
+	width:100%;
+}
+
+.watch-discoverbox-divider {
+border-bottom:1px dotted #CCCCCC;
+clear:both;
+margin-bottom:3px;
+margin-right:7px;
+padding-bottom:3px;
+}
+
+.jomtube_comments {
+	float:left;
+}
+
+/*###########################################*/
+/*########## TABS SYSTEM ON VIDEO PLAYER PAGE */
+/*###########################################*/
+
+#tab-container {
+    float: left;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+    z-index: -1;
+/*    width: 356px; */
+}
+
+.category-tabs {
+    float: left;
+	border-bottom:1px solid #CCCCCC; 
+	margin-bottom:-1px;
+	width:100%;
+}
+
+.category-tabs a, .category-tabs a:hover, .category-tabs a:active {
+	background-color:#D8DFEA;
+	border-top:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	color:#3B5998;
+	text-decoration:none;
+    float: left;    
+    display: block;    
+    height: 21px;    
+    line-height: 21px;    
+    margin-right: 2px;    
+    padding-top: 0pt;    
+    padding-right: 3px;    
+    padding-bottom: 0pt;    
+    padding-left: 3px;    
+    font-weight: bold;    
+    width: 70px;    
+    text-align: center;    
+    overflow-x: hidden;    
+    overflow-y: hidden;    
+    white-space: nowrap;
+    z-index: 1;
+	margin-bottom:-1px;
+}
+
+
+.category-tabs a.selected {
+	color:#000000;
+	text-decoration:none;
+    background-color: #FFFFFF;
+	margin-bottom:-1px;
+	border-top:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-bottom:1px solid #FFFFFF;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>JomTube All In One Module</name>
+	<author>JomTube</author>
+	<creationDate>2009-06-03</creationDate>
+	<copyright>Copyright (C) 2009 All rights reserved by Subfighter.com</copyright>
+	<license>http://www.jomtube.com</license>
+	<authorEmail>support@jomtube.com</authorEmail>
+	<authorUrl>jomtube.com</authorUrl>
+	<version>1.0 Beta</version>
+	<description>JomTube All in one Module that allows you to display Vertically or Horizontally Video List.</description>
+	<files>
+		<filename module="mod_jomtube_aio">mod_jomtube_aio.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>assets/css/jomtube_aio120.css</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+	</files>
+
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="marginleftvid" type="text" default="5" label="Margin From Left in (px)" description="Margin From Left side of Module For Single Row in (px)" />
+        <param name="numvideos" type="text" default="8" label="Number Videos" description="Limit number for show" />
+        <param name="displaymode" type="list" default="L" label="Display Mode" description="There are 3 ways of display for this module">
+    		<option value="L">Latest Video</option>
+    		<option value="V">Most Viewed</option>
+    		<option value="R">Highest Rated</option>
+    		<option value="F">Featured Videos</option>
+    		<option value="random">Random Videos</option>
+    	</param>
+        <param name="columns_per_row" type="text" default="24.9" label="Columns Per Row By (%)" description="Example 25% = 4 Columns Click Help For Complete Info" />
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="show_videotitle" type="radio" default="1" label="Show Video Title" description="Show Video Title">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="show_dateadded" type="radio" default="1" label="Show Date Added" description="Show Date Added">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+        <param name="show_author" type="radio" default="1" label="Show Author" description="Show Author">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="show_numberviews" type="radio" default="1" label="Show Hits Counter" description="Show Hits Counter">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="show_ratingstar" type="radio" default="1" label="Show Rating Stars" description="Show Rating Stars">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="show_videoduration" type="radio" default="1" label="Show Video Duration" description="Show The Video Duration on the the Thumbnails">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="thumbnail_size" type="radio" default="medium" label="Thumbnail Size" description="Choose The Size of the Thumbnails And Display">
+			<option value="small">Small</option>
+			<option value="medium">Medium</option>
+			<option value="large">Large</option>
+		</param>
+    </params>
+</install>

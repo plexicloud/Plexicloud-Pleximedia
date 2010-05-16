@@ -1,0 +1,168 @@
+/* Category List Column layout */
+
+#category-pagelayout {
+	float:left;
+}
+#category-column {
+	float:left;
+	border:0px solid #CCCCCC;
+	width:612px;
+	margin-left:5px;
+}
+#category-video-container {
+	float:left;
+	border:0px solid #555555;
+	margin-left:5px;
+}
+
+/* Category Heading Title (VIDEO CATEGORIES) */
+#categorybox {
+	float:left;
+	border:0px solid #CCCCCC;
+	width:612px;
+	margin-top:10px;
+}
+
+#categorytitle {
+	float:left;
+	width:200px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+#categorylistbox {
+	float:right;
+	margin-top:3px;
+	margin-right:1px;
+}
+
+
+/* BREADCRUMB Containter */
+#breadcrumbcontainer {
+	float: left;
+}
+
+#category-grid-container {
+	float: left;
+	width:100%;
+}
+
+/* Vidoes Found Container and TEXT */
+#VideosFoundContainer {
+	float: left;
+	font-size:11px;
+	color:#666666;
+}
+
+/***************************************************************************
+ * CATEGORY LIST AND THUBNAILS 
+ ***************************************************************************/
+
+#categorycontainer {
+	float:left;
+	width:100%;
+}
+
+#categorylists {
+	width:100%;
+}
+
+.categorydiscoverbox {
+	overflow:auto;
+	padding-top:2px;
+}
+
+.categoryentry {
+	
+}
+
+.categoryv120WideEntry {
+	float:left;
+	line-height:14px;
+	text-align:left;
+	width:120px;
+}
+
+.categoryv120WrapperOuter {
+	border:1px solid #999999;
+	width:122px;
+}
+
+.categoryv120WrapperInner {
+	border:1px solid #FFFFFF;
+	height:90px;
+	overflow:hidden;
+	width:120px;
+}
+
+.categoryvimg120 {
+	border:1px solid #999999;
+	height:90px;
+	width:120px;
+}
+
+.category-main-content {
+	padding-left:130px;
+}
+
+.category-title {
+	font-size:18px;
+	font-weight:bold;
+	line-height:18px;
+}
+
+.category-subcategory {
+	color:#666666;
+	font-size:100%;
+
+}
+
+.category-divider {
+	border-bottom:1px dotted #CCCCCC;
+	clear:both;
+	margin-bottom:3px;
+	padding-bottom:5px;
+}
+
+.category-description {
+	color:#666666;
+	font-size:90%;
+	height:13px;
+}
+
+/* RIGHT Column layout */
+
+#category-col-right-container {
+	float:right;
+	padding-top:10px;
+	padding-right:1px;
+	width:305px;
+}
+
+#category-column-right {
+	float: left; 
+	width: 300px; 
+	border: 0px solid #CCCCCC; 
+}
+
+.video-count {
+	font-family:Arial,sans-serif;
+	margin-right:1px;
+	margin-top:-20px;
+	text-align:right;
+	white-space:nowrap;
+}
+
+.video-count span {
+	-moz-border-radius-bottomleft:1px;
+	-moz-border-radius-bottomright:1px;
+	-moz-border-radius-topleft:1px;
+	-moz-border-radius-topright:1px;
+	background-color:#000000;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	height:14px;
+	opacity:0.65;
+	padding:0 4px;
+}
