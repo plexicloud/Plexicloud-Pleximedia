@@ -127,12 +127,9 @@ function youtubeembed($video_detail, $jomtube_configs){
 
 <?php
 
-	$jwplayer_embed = "<div id=\"JomPlayerContainer\" class=\"JomPlayerContainer\">
-	      				<a id=\"JomTubePlayerId1\" class=\"player1\" href=\"http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash\">Get the Adobe Flash Player to see this video.</a>
-	    			  </div>
-					  ";
-
+	$jwplayer_embed = "<object width=\"".$videowidth."px\" height=\"".$videoheight."\"><param name=\"movie\" value=\"http://www.youtube.com/v/".$vcode."&autoplay=1&rel=0\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/".$vcode."&rel=0&autoplay=1\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"".$videowidth."px\" height=\"".$videoheight."px\"></embed></object>";
 	return $jwplayer_embed;
+	
     }
 
 

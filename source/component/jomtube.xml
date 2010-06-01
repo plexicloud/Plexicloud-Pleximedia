@@ -39,7 +39,7 @@
 		<!-- HELPER -->
 		<filename>helpers/index.html</filename>
 		<filename>helpers/helpers.php</filename>
-		<filename>helpers/toolesHelpers.php</filename>
+		<filename>helpers/toolsHelpers.php</filename>
 		<!-- /HELPER -->
 		
 		<!-- MODELS -->
