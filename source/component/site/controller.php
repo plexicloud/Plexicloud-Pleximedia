@@ -314,7 +314,7 @@ class jomtubeController extends JController
                 $tmp_name = $file_info['tmp_name'];
                 if (!JFolder::exists($category_path))
 
-				JFolder::create($category_path);
+				JFolder::create($category_path, 775);
                 @copy($tmp_name, $category_path . '/' . $file_name);
                 @unlink($tmp_name);
 
@@ -326,16 +326,23 @@ class jomtubeController extends JController
             // ###### USE NORMAL UPLOAD
             // ###########################################################
             $file_info = $_FILES['file'];
+			
+			//print_r($file_info);
+			//die();
             //remove space
-            $file_name = JTHelper::removeSpaceFileName($file_info['name']);
-            $file_name = JTHelper::vietDecode($file_name);
+            //$file_name = JTHelper::removeSpaceFileName($file_info['name']);
+            //$file_name = JTHelper::vietDecode($file_name);
+			
+			$file_name =JTHelper::cGenRandomFilename(category_path, $file_info['name'], '');
+			//echo $file_name;
+			//$post['filename_random'] = $file_name;
             //check duplicate
-            JTHelper::getNoDuplicateFileName($category_path, $file_name, 'flv');
+            //JTHelper::getNoDuplicateFileName($category_path, $file_name, 'flv');
 
             $tmp_name = $file_info['tmp_name'];
 			if (!JFolder::exists($category_path))
 
-			JFolder::create($category_path);
+			JFolder::create($category_path, 775);
 
 
             if (move_uploaded_file($tmp_name, $category_path . '/' . $file_name)) {

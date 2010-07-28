@@ -38,22 +38,24 @@ if (!file_exists($jomtube_configs_file)) {
     $show_videoduration = $params->get('show_videoduration');
 
     //all in one tabs parameters
-    $displaymode = 'L';
-    $show_latest_tab = $params->get('show_latest_tab', 0);
+    $displaymode = 'F';
+	$show_featured_tab = $params->get('show_featured_tab', 0);
     $show_most_viewed_tab = $params->get('show_most_viewed_tab', 0);
     $show_highest_rated_tab = $params->get('show_highest_rated_tab', 0);
-    $show_featured_tab = $params->get('show_featured_tab', 0);
-    if ($show_latest_tab)
-        $displaymode = 'L';
+    $show_latest_tab = $params->get('show_latest_tab', 0);
+    if ($show_featured_tab)
+        $displaymode = 'F';
     else if ($show_most_viewed_tab)
         $displaymode = 'V';
     else if ($show_highest_rated_tab)
         $displaymode = 'R';
-    else if ($show_featured_tab)
-        $displaymode = 'F';
+    else if ($show_latest_tab)
+        $displaymode = 'L';
 
     $where=$params->get('getCat');
+	//echo $displaymode;
     $items = JomtubeTabsHelper::getItems($displaymode,$numVideos,$where);
+	//print_r($items);
     $Itemid = JomtubeTabsHelper::generateJomTubeItemid();
 }
 

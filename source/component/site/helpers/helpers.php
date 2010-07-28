@@ -177,14 +177,169 @@ class JTHelper {
      */
     public function flvToThumbnail($video_path, $thumb_path, $width=120, $height=90, $time=0, $c) {
         $ffmpeg_path = $c->ffmpeg_path;
-        if ($time<10)
-        $command = "$ffmpeg_path -y -itsoffset -2 -i ".escapeshellarg($video_path)." -vcodec mjpeg -vframes 1 -an -f rawvideo -s " . $width . "x" . $height . " -ss $time " . escapeshellarg($thumb_path);
-        else
-        $command = "$ffmpeg_path -y -itsoffset -10 -i ".escapeshellarg($video_path)." -vcodec mjpeg -vframes 1 -an -f rawvideo -s " . $width . "x" . $height . " -ss $time " . escapeshellarg($thumb_path);
-        $command .= " 2>&1";
-        //echo $command; exit();
-        return @exec($command, $output);
+		$videoInfo = JTHelper::getVideoInfo($video_path, $c);
+		$videoFrame = JTHelper::cFormatDuration( (int) ($videoInfo['duration']['sec'] / 2), 'HH:MM:SS' );
+		
+        //if ($time<10)
+       // $command = "$ffmpeg_path -y -itsoffset -2 -i ".escapeshellarg($video_path)." -vcodec mjpeg -vframes 1 -an -f rawvideo -s " . $width . "x" . $height . " -ss $time " . escapeshellarg($thumb_path);
+        $command	= "$ffmpeg_path" . ' -i ' . $video_path . ' -ss ' . $videoFrame . ' -t 00:00:01 -s ' . '120x90' . ' -r 1 -f mjpeg ' . $thumb_path;
+	//	$cmdOut = shell_exec($cmd);
+		//else
+       // $command = "$ffmpeg_path -y -itsoffset -10 -i ".escapeshellarg($video_path)." -vcodec mjpeg -vframes 1 -an -f rawvideo -s " . $width . "x" . $height . " -ss $time " . escapeshellarg($thumb_path);
+       // $command .= " 2>&1";
+	   
+       // echo $command; exit();
+      // return @exec($command, $output);
+	  return shell_exec($command);
     }
+	
+	
+		/*
+	 * Return Video's information
+	 * bitrate, duration, video and frame properties
+	 * 
+	 * @params string $videoFilePath path to the Video
+	 * @return array of video's info	 
+	 * @since Jomsocial 1.2.0
+	 */
+	function getVideoInfo($videoFile, $c,$cmdOut = '')
+	{
+		$ffmpeg_path = $c->ffmpeg_path;
+		$data = array();
+
+		if (!is_file($videoFile) && empty($cmdOut))
+			return $data;
+
+		if (!$cmdOut) {
+			//$cmd	= $this->converter . ' -v 10 -i ' . $videoFile . ' 2>&1';
+			// Some FFmpeg version only accept -v value from -2 to 2 
+			$cmd	= "$ffmpeg_path" . ' -i ' . $videoFile . ' 2>&1';
+			
+			$cmdOut	= shell_exec($cmd);
+		}
+
+		if (!$cmdOut) {
+			return $data;
+		}
+		
+		preg_match_all('/Duration: (.*)/', $cmdOut , $matches);
+		if (count($matches) > 0 && isset($matches[1][0]))
+		{
+			
+			
+			$parts = explode(', ', trim($matches[1][0]));
+			
+			$data['bitrate']			= intval(ltrim($parts[2], 'bitrate: '));
+			$data['duration']['hms']	= substr($parts[0], 0, 8);
+			$data['duration']['exact']	= $parts[0];
+			$data['duration']['sec']	= $videoFrame = JTHelper::cFormatDuration($data['duration']['hms'], 'seconds');
+			$data['duration']['excess']	= intval(substr($parts[0], 9));
+		}
+		else
+		{
+			if ($this->debug) {
+				echo '<pre>FFmpeg failed to read video\'s duration</pre>';
+				echo '<pre>' . $cmd . '<pre>';
+				echo '<pre>' . $cmdOut . '</pre>';
+			}
+			return false;
+		}
+		$file_size = filesize($videoFile);
+		$duration_in_sec = ($file_size*8)/($data['bitrate']*1000);
+		//echo $duration_in_sec;
+		$duration = JTHelper::sec2hms($duration_in_sec);
+		//echo $duration;
+		$data['duration']['hms'] = $duration;
+		$data['duration']['exact'] = $duration;
+		$data['duration']['sec'] = round($duration_in_sec);
+		$data['duration']['excess']	= intval(substr($duration, 9));
+		//echo '<pre>';print_r($data);print_r($cmdOut);die();
+		preg_match('/Stream(.*): Video: (.*)/', $cmdOut, $matches);
+		if (count($matches) > 0 && isset($matches[0]) && isset($matches[2]))
+		{
+			$data['video']	= array();
+
+			preg_match('/([0-9]{1,5})x([0-9]{1,5})/', $matches[2], $dimensions_matches);
+			$data['video']['width']		= floatval($dimensions_matches[1]);
+			$data['video']['height']	= floatval($dimensions_matches[2]);
+
+			preg_match('/([0-9\.]+) (fps|tb)/', $matches[0], $fps_matches);
+
+			if (isset($fps_matches[1]))
+				$data['video']['frame_rate']= floatval($fps_matches[1]);
+
+			preg_match('/\[PAR ([0-9\:\.]+) DAR ([0-9\:\.]+)\]/', $matches[0], $ratio_matches);
+			if(count($ratio_matches))
+			{
+				$data['video']['pixel_aspect_ratio']	= $ratio_matches[1];
+				$data['video']['display_aspect_ratio']	= $ratio_matches[2];
+			}
+
+			if (!empty($data['duration']) && !empty($data['video']))
+			{
+				$data['video']['frame_count'] = ceil($data['duration']['sec'] * $data['video']['frame_rate']);
+				$data['frames']				= array();
+				$data['frames']['total']	= $data['video']['frame_count'];
+				$data['frames']['excess']	= ceil($data['video']['frame_rate'] * ($data['duration']['excess']/10));
+				$data['frames']['exact']	= $data['duration']['hms'] . '.' . $data['frames']['excess'];
+			}
+
+			$parts			= explode(',', $matches[2]);
+			$other_parts	= array($dimensions_matches[0], $fps_matches[0]);
+
+			$formats = array();
+			foreach ($parts as $key => $part)
+			{
+				$part = trim($part);
+				if (!in_array($part, $other_parts))
+					array_push($formats, $part);
+			}
+			$data['video']['pixel_format']	= $formats[1];
+			$data['video']['codec']			= $formats[0];
+		}
+
+		return $data;
+	}
+	
+	
+	/**
+	 * Convert seconds to HOURS:MINUTES:SECONDS format or vice versa
+	 * 
+	 * @params string $duration
+	 * @params string $format either seconds or HH:MM::SS
+	 * @since Jomsocial 1.2.0 
+	 */
+	function cFormatDuration ($duration = 0, $format = 'HH:MM:SS')
+	{
+		if ($format == 'seconds' || $format == 'sec') {
+			$arg = explode(":", $duration);
+	
+			$hour	= isset($arg[0]) ? intval($arg[0]) : 0;
+			$minute	= isset($arg[1]) ? intval($arg[1]) : 0;
+			$second	= isset($arg[2]) ? intval($arg[2]) : 0;
+	
+			$sec = ($hour*3600) + ($minute*60) + ($second);
+			return (int) $sec;
+		}
+	
+		if ($format == 'HH:MM:SS' || $format == 'hms') {
+			$timeUnits = array
+			(
+				'HH' => $duration / 3600 % 24,
+				'MM' => $duration / 60 % 60,
+				'SS' => $duration % 60
+			);
+	
+			$arg = array();
+			foreach ($timeUnits as $timeUnit => $value) {
+				$arg[$timeUnit] = ($value > 0) ? $value : 0;
+			}
+	
+			$hms = '%02s:%02s:%02s';
+			$hms = sprintf($hms, $arg['HH'], $arg['MM'], $arg['SS']);
+			return $hms;
+		}
+	}
 
     /**
      * Get movie duration by php-ffmpeg
@@ -478,5 +633,61 @@ class JTHelper {
             imagejpeg($img2, $thumbFileName);
         }
     }
+	
+	/**
+ * Generate new random file name with specified extension
+ * create the directory if it does not exist
+ * 
+ * @params string	$directory	Directory path
+ * $params string	$filename	File name, optional
+ * @params string	$extension	File extension, optional
+ * $params int		$length		The length of filename
+ * @return string	File name with extension
+ * @since Jomsocial 1.2.0
+ */
+function cGenRandomFilename($directory, $filename = '' , $extension = '', $length = 11)
+{
+	if (strlen($directory) < 1)
+		return false;
+
+	$directory = JPath::clean($directory);
+	
+	
+	jimport('joomla.filesystem.file');
+	jimport('joomla.filesystem.folder');
+
+	if (!JFile::exists($directory))
+		JFolder::create( $directory, 0775 );
+
+	if (strlen($filename) > 0)
+		$filename	= JFile::makeSafe($filename);
+
+	if (!strlen($extension) > 0)
+		$extension	= '';
+
+	$dotExtension 	= $filename ? JFile::getExt($filename) : $extension;
+	$dotExtension 	= $dotExtension ? '.' . $dotExtension : '';
+
+	$map			= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	$len 			= strlen($map);
+	$stat			= stat(__FILE__);
+	$randFilename	= '';
+
+	if(empty($stat) || !is_array($stat))
+		$stat = array(php_uname());
+
+	mt_srand(crc32(microtime() . implode('|', $stat)));
+	for ($i = 0; $i < $length; $i ++) {
+		$randFilename .= $map[mt_rand(0, $len -1)];
+	}
+
+	$randFilename .= $dotExtension;
+
+	if (JFile::exists($directory . DS . $randFilename)) {
+		cGenRandomFilename($directory, $filename, $extension, $length);
+	}
+
+	return $randFilename;
+}
 }
 ?>

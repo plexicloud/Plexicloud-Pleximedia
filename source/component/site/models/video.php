@@ -235,28 +235,31 @@ class jomtubeModelVideo extends JModel
             $c = jomtube_configs::get_instance();
 
             if ($c->use_ffmpeg) {
+				$path_parts = pathinfo($row->video_url);
                 if ($c->h264_convert2mp4) {
-                    $path_new = $data['catdir'] . '/' . $row->video_url . '.mp4';
+					
+                    $path_new = $data['catdir'] . DS . $path_parts['filename'] . '.mp4';
                     JTHelper::movieToMp4H264_alduccino($path_original, $path_new, $c);
 
                     //update video_url
-                    $row->video_url = $row->video_url . '.mp4';
+                    $row->video_url = $path_parts['filename']  . '.mp4';
                 } else {
-                    $path_new = $data['catdir'] . '/' . $row->video_url . '.flv';
+
+                    $path_new = $data['catdir'] . DS . $path_parts['filename'] . '.flv';
+                   //echo $path_original;echo '<br>';
+                   //echo $path_new;echo '<br>';
                     JTHelper::movieToFlv($path_original, $path_new, $c);
 
                     //update video_url
-                    $row->video_url = $row->video_url . '.flv';
+                    $row->video_url = $path_parts['filename'] . '.flv';
                 }
 
                 //delete original file
                 if ($c->delete_orignial_file) {
                     @unlink($path_original);
                 }
-            } else {//not use ffmpeg
-
-            }
-
+            } 
+			
             // ###########################################################
             // ###### CREATE THUMBNAIL FROM FLV OR MP4
             // ###########################################################
@@ -265,20 +268,34 @@ class jomtubeModelVideo extends JModel
             $display_path = $data['catdir'].'/_display/'.$row->video_url.'.jpg';
 
             //get movie duration
-            if ($c->use_php_ffmpeg) {//use php-ffmpeg
+            //$file_name = $data['filename_random'];
+            //echo $file_name;echo '<pre>';echo $flv_path;
+            //$path_temp = $data['catdir'] . '/' . $file_name;
+            $videoInfo = JTHelper::getVideoInfo($flv_path, $c);
+            //print_r($videoInfo);die();
+            /*if ($c->use_php_ffmpeg) {//use php-ffmpeg
                 $sec = JTHelper::getMovieDuration($flv_path);
-                $duration = JTHelper::sec2hms($sec); //covert to 00:00:00 i.e. hrs:min:sec*/
+                $duration = JTHelper::sec2hms($sec); //covert to 00:00:00 i.e. hrs:min:sec
             } else {//not use php-ffmpeg
                 $sec = 6;
                 $duration = '';
-            }
-            $row->duration = $duration;
-
-            if (!is_dir($display_path))
+            }*/
+            $row->duration = $videoInfo['duration']['hms'];
+			$display_folder = $data['catdir'].'/_display/';
+			$thumbs_folder = $data['catdir'].'/_thumbs/';
+            if (!is_dir($display_folder))
             {
-                $oldumask=umask(0);
-                @mkdir ($display_path, 0755);
-                umask($oldumask);
+            	JFolder::create($display_folder, 775);
+                //$oldumask=umask(0);
+               // @mkdir ($display_path, 0755);
+                //umask($oldumask);
+            }
+     	    if (!is_dir($thumbs_folder))
+            {
+            	JFolder::create($thumbs_folder, 775);
+                //$oldumask=umask(0);
+               // @mkdir ($display_path, 0755);
+                //umask($oldumask);
             }
             //get the middle of the movie (time; 00:00:00 format) for thumbnail
             if ($c->use_ffmpeg) {//use ffmpeg

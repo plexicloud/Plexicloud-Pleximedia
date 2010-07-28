@@ -1,9 +1,5 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
-
-$doc =& JFactory::getDocument();
-$doc->addStyleSheet(JURI::base(). 'components/com_jom_tube/styles/solar_sentinel_lightgray/css/videoplayer.css' );
-
 ?>
 
 <script src="<?php echo JURI::base() ?>components/com_jomtube/assets/js/jomtubeajax.js" language="javascript"></script>
@@ -20,7 +16,7 @@ function selectCategory(catid) {
         <a href="<?php echo JRoute::_("index.php?view=videos")?>">Main</a>
         <?php foreach ($this->breadcrum as $cat):?>
         <img src="components/com_jomtube/assets/images/arrow.png">
-                <a href="<?php echo JRoute::_("index.php?task=categories&catid=$cat->id")?>"><?php echo $cat->category_name?></a>
+                <a href="<?php echo JRoute::_("index.php?view=videos&category_id=$cat->id")?>"><?php echo $cat->category_name?></a>
         <?php endforeach;?>
         </div>
         <div id="jomtube_container" name="jomtube">
@@ -29,129 +25,33 @@ function selectCategory(catid) {
                         <div id="watch-vid-title" style="width:<?php echo $this->c->video_player_width;?>px;">
                                 <?php echo stripslashes($this->row->video_title);?>
                         </div>
-                        <div id="watch-vid-category">
+                        <!--<div id="watch-vid-category">
                                 Select Category:<br><?php echo $this->parentSelect ?>
-                        </div>
+                        </div>-->
                 </div>
+<div id="facebook_like">
+<?php function curPageURL() {
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $pageURL;
 
+}
+?>
+<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo curPageURL();?>&layout=standard&show_faces=false&width=450&action=recommend&font&colorscheme=light&height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+</div>
                 <div id="watch-this-vid">
                         <?php include("video_player.php");?>
                 </div>
                 <!-- ###################### VIDEO PLAYER END ################-->
 
-                <!-- ###################### VIDEO RIGHT COLUMN START ################-->
-                <div id="watch-other-vids">
-
-                        <!-- ###################### AJAX TABS START ################-->
-
-                                <script type="text/javascript">
-                                var live_site = '<?php echo JURI::base() ?>';
-                                window.addEvent('domready', function(){
-                                    $('category').addEvent('click', function(e) {
-                                        e = new Event(e).stop();
-                                        $('category').addClass('selected');
-                                        $('newest').removeClass('selected');
-                                        $('member').removeClass('selected');
-                                        $('featured').removeClass('selected');
-                                        var timenow = Date();
-                                        var url = live_site + 'components/com_jomtube/ajax.jomtube.php?task=aio&act=category&catid=<?php echo $this->row->category_id ?>'+ '&timenow=' + timenow;
-                                        new Ajax(url, {method: 'post', update: $('video_lists'), evalScripts: true}).request();
-                                    });
-                                });
-
-                                window.addEvent('domready', function(){
-                                    $('member').addEvent('click', function(e) {
-                                        e = new Event(e).stop();
-                                        $('member').addClass('selected');
-                                        $('newest').removeClass('selected');
-                                        $('category').removeClass('selected');
-                                        $('featured').removeClass('selected');
-                                        var timenow = Date();
-                                        var url = live_site + 'components/com_jomtube/ajax.jomtube.php?task=aio&act=member&userid=<?php echo $this->row->user_id ?>'+ '&timenow=' + timenow;
-                                        new Ajax(url, {method: 'get', update: $('video_lists'), evalScripts: true}).request();
-                                    });
-                                });
-
-                                window.addEvent('domready', function(){
-                                    $('newest').addEvent('click', function(e) {
-                                        e = new Event(e).stop();
-                                        $('newest').addClass('selected');
-                                        $('category').removeClass('selected');
-                                        $('member').removeClass('selected');
-                                        $('featured').removeClass('selected');
-                                        var timenow = Date();
-                                        var url = live_site + 'components/com_jomtube/ajax.jomtube.php?task=aio&act=newest&catid=<?php echo $this->row->category_id ?>'+ '&timenow=' + timenow;
-                                        new Ajax(url, {method: 'get', update: $('video_lists'), evalScripts: true}).request();
-                                    });
-                                });
-
-                                window.addEvent('domready', function(){
-                                    $('featured').addEvent('click', function(e) {
-                                        e = new Event(e).stop();
-                                        $('featured').addClass('selected');
-                                        $('category').removeClass('selected');
-                                        $('member').removeClass('selected');
-                                        $('newest').removeClass('selected');
-                                        var timenow = Date();
-                                        var url = live_site + 'components/com_jomtube/ajax.jomtube.php?task=aio&act=featured&catid=<?php echo $this->row->category_id ?>'+ '&timenow=' + timenow;
-                                        new Ajax(url, {method: 'get', update: $('video_lists'), evalScripts: true}).request();
-                                    });
-                                });
-
-                        </script>
-                                <div class="category-tabs">
-                    <a id="category" href="#" class="selected"><?php echo _SUBTABS_CATEGORY ?></a>
-                    <a id="member" href="#"><?php echo _SUBTABS_MEMBER ?></a>
-                    <a id="newest" href="#"><?php echo _SUBTABS_LASTEST ?></a>
-                    <a id="featured" href="#"><?php echo _SUBTABS_FEATURED ?></a>
-                                </div>
-
-                        <!-- ###################### AJAX TABS END ################-->
-                        <div class="clearL"></div>
-                        <div id="tab-container">
-                        <!--############## CATEGORY LIST ENTRY START ###########-->
-                        <div id="video_lists">
-                                <div class="watch-discoverbox">
-                                <?php if ($this->videosincategory):?>
-                                        <?php foreach ($this->videosincategory as $video):?>
-                                                <div class="video-entry">
-                                                        <div class="v90WideEntry">
-                                                                <div class="v90WrapperOuter">
-                                                                        <div class="v90WrapperInner">
-                                                                        <?php if ($video->video_type == 'local' || $video->video_type == ''):?>
-                                                                        <a href="<?php echo JRoute::_("index.php?view=video&id=$video->id")?>" id="video-url-e8FGIveLwyw">
-                                                                <img alt="<?php echo $video->video_title?>" qlicon="e8FGIveLwyw" class="vimg90" src="<?php echo substr(JURI::base(), 0, strlen(JURI::base()) -1).$video->directory?>/_thumbs/<?php echo $video->video_thumb; ?>" border="0" />
-                                                                        </a>
-                                                                        <?php else:?>
-                                                                        <a href="<?php echo JRoute::_("index.php?view=video&id=$video->id")?>" id="video-url-e8FGIveLwyw">
-                                                                <img alt="<?php echo $video->video_title?>" qlicon="e8FGIveLwyw" class="vimg90" src="<?php echo $video->video_thumb; ?>" border="0" />
-                                                                        </a>
-                                                                        <?php endif;?>
-                                                                                <div class="video-time-player"><span><?php echo $video->duration?></span>
-                                                                                </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="video-main-content">
-                                                        <div class="video-mini-title"><a href="<?php echo JRoute::_("index.php?view=video&id=$video->id")?>" title="<?php echo $video->video_title?>"><?php echo stripslashes($video->video_title)?></a>
-                                                        </div>
-                                                        <div class="video-view-count"><?php echo $video->hits?> <?php echo strtolower(_VIDEOINFO_NUMBER_VIEWS) ?>
-                                                        </div>
-                                                        <div class="video-username"><?php echo _VIDEOINFO_AUTHOR ?>: <a href="<?php echo JRoute::_("index.php?view=videos&type=member&user_id=" . $video->user_id) ?>"><?php echo jomtube::showShortAuthor($video->username)?></a>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="watch-discoverbox-divider"/>
-                                        </div>
-                                        <?php endforeach;?>
-                                        <?php if ($this->countvideosincategory > 20):?>
-                                        <center><a href="<?php echo JRoute::_("index.php?view=videos&category_id=". $this->row->category_id)?>">See all <?php echo $this->countvideosincategory?> videos</a></center>
-                                        <?php endif;?>
-                                        <?php endif;?>
-                        </div>
-                        <!--############## CATEGORY LIST ENTRY END ###########-->
-                        </div>
-                </div>
+ 
+                
                 <!--############## CUSTOM MODULE POSITION ###########-->
                 <div style="float: left; width: 324px; border: 0px solid #CCCCCC; margin-top: 10px;"?>
                       <?php
@@ -174,7 +74,7 @@ function selectCategory(catid) {
                                 <span id="ajaxRating" class="jomtube_ajaxrating">
 
                                 <?php
-                                echo _VIDEOINFO_RATE . " ";
+                                echo "Rate: ";
 
                                 $emptyStar = JURI::base() . "components/com_jomtube/assets/images/emptyStar16x16.gif";
                                 $halfStar = JURI::base() . "components/com_jomtube/assets/images/halfStar16x16.gif";
@@ -237,73 +137,90 @@ function selectCategory(catid) {
 
                         <div id="vidinfocontainer">
 <!---------------- AUTHOR DURATION CONTAINER --------------------->
-                        <?php if ($this->c->community != 'No'):?>
-                            <div id="author-container">
+                        <div id="author-container">
                                 <div id="video-author">
-                                         <?php $mosConfig_live_site = substr(JURI::base(), 0, strlen(JURI::base()) -1);?>
-                                         <a href="<?php echo JRoute::_('index.php?option=com_community&view=profile&userid=' . $this->row->user_id); ?>"><img src="<?php echo $mosConfig_live_site?>/<?php echo $this->row->avatar?>" width="64" height="64" /></a>
+                                        <strong>From: </strong><span class="grayText"><a href="<?php echo JRoute::_("index.php?option=com_community&view=profile&userid=" . $this->row->user_id) ?>"><?php echo $this->row->username;?></a></span><br />
+                                        <strong>Added: </strong><span class="grayText"><?php echo $this->row->date_added;?></span><br />
                                 </div>
                                 <div id="duration-category">
-                                        <strong><?php echo _VIDEOINFO_AUTHOR ?>: </strong><span class="grayText"><a href="<?php echo JRoute::_("index.php?view=videos&type=member&user_id=" . $this->row->user_id) ?>"><?php echo $this->row->username;?></a></span><br />
-                                        <strong><?php echo _VIDEOINFO_DATE_ADDED ?>: </strong><span class="grayText"><?php echo $this->row->date_added;?></span><br />
-                                        <strong><?php echo _VIDEOINFO_CATEGORY ?>: </strong><span class="grayText"><a href="<?php echo JRoute::_("index.php?view=videos&category_id=" . $this->row->category_id)?>"><?php echo $this->row->category_name;?></a></span><br />
-                                        <strong><?php echo _VIDEOINFO_DURATION ?>: </strong><span class="grayText"><?php echo $this->row->duration;?></span>
+                                        <strong>Category: </strong><span class="grayText"><a href="<?php echo JRoute::_("index.php?view=videos&category_id=" . $this->row->category_id)?>"><?php echo $this->row->category_name;?></a></span><br />
+                                        <strong>Duration: </strong><span class="grayText"><?php echo $this->row->duration;?></span>
                                 </div>
                         </div>
-                        <?php else:?>
-                            <div id="author-container">
-                                    <div id="video-author">
-                                            <strong><?php echo _VIDEOINFO_AUTHOR ?>: </strong><span class="grayText"><a href="<?php echo JRoute::_("index.php?view=videos&type=member&user_id=" . $this->row->user_id) ?>"><?php echo $this->row->username;?></a></span><br />
-                                            <strong><?php echo  _VIDEOINFO_DATE_ADDED ?>: </strong><span class="grayText"><?php echo $this->row->date_added;?></span><br />
-                                    </div>
-                                    <div id="duration-category">
-                                            <strong><?php echo _VIDEOINFO_CATEGORY ?>: </strong><span class="grayText"><a href="<?php echo JRoute::_("index.php?view=videos&category_id=" . $this->row->category_id)?>"><?php echo $this->row->category_name;?></a></span><br />
-                                            <strong><?php echo _VIDEOINFO_DURATION ?>: </strong><span class="grayText"><?php echo $this->row->duration;?></span>
-                                    </div>
-                            </div>
-                        <?php endif;?>
 <!---------------- DESCRIPTION AND KEYWORDS CONTAINER --------------------->
                         <div id="description-container">
                                 <div id="video-tags">
-                                        <strong><?php echo _VIDEOINFO_TAGS ?>:</strong> <?php echo stripslashes($this->videotaglinked);?>
+                                        <strong>Tags:</strong> <?php echo stripslashes($this->videotaglinked);?>
                                 </div>
                                 <div id="video-desc">
-                                        <strong><?php echo _VIDEOINFO_DESCRIPTION ?>: </strong><?php echo str_replace("\r\n", "<br/>", stripslashes($this->row->video_desc));?>
+                                        <strong>Description: </strong><?php echo stripslashes($this->row->video_desc);?>
                                 </div>
                         </div>
 <!---------------- EMBED AND LINK CONTAINER --------------------->
                         <div id="embed-container">
                                 <div id="video-link">
-                                        <label for="link_to_page"><strong><?php echo _VIDEOINFO_LINK ?>: </strong></label>
-                                        <?php $mosConfig_live_site = substr(JURI::base(), 0, strlen(JURI::base()) -1);?>
-                                        <input class="videodirectlink" type="text" id="link_to_page" name="link_to_page" value="<?php echo $mosConfig_live_site.JRoute::_('index.php?option=com_jomtube&view=video&id='.$this->row->id); ?>" onClick="javascript:this.select();" />
+                                        <label for="link_to_page"><strong>Link: </strong></label>
+                                        <input class="videodirectlink" type="text" id="link_to_page" name="link_to_page" value="<?php echo $this->basUrl.JRoute::_('index.php?option=com_jomtube&view=video&id='.$this->row->id); ?>" onClick="javascript:this.select();" />
                                 </div>
-                                 <?php if ($this->c->show_embed_code):?>
+                                 <?php if ($this->c->show_embed_code){?>
+								 <?php if ($this->row->video_type != 'local' && $this->row->video_type != NULL){?>
+								 <label for="embed_video"><strong>Embed: </strong></label>
+                                        <input style="width:50.7em" class="videoembedcode" type="text" id="embed_video" name="embed_video" value="<?php echo htmlspecialchars($this->embed) ?>"  onClick="javascript:this.select();" />
+								 <?php }else { ?>
                                 <div id="video-embed">
-                                        <label for="embed_video"><strong><?php echo _VIDEOINFO_EMBED ?>: </strong></label>
-                                        <input class="videoembedcode" type="text" id="embed_video" name="embed_video" value="<embed  src='<?php echo $mosConfig_live_site?>/components/com_jomtube/assets/swf/player.swf' width='560' height='441' allowscriptaccess='always' allowfullscreen='true' flashvars='height=441&width=560&file=<?php echo $mosConfig_live_site?><?php echo $this->row->directory?>/<?php echo $this->row->video_url?>&autostart=true'  />" onClick="javascript:this.select();" />
+                                	<?php $embedurl = "<embed src='".$this->basUrl."/components/com_jomtube/assets/swf/player.swf' width='560' height='441' allowscriptaccess='always' allowfullscreen='true' flashvars='height=441&width=560&file=".
+												$this->basUrl.$this->row->directory."/".$this->row->video_url."&autostart=true'/>";?>
+                                        <label for="embed_video"><strong>Embed: </strong></label>
+                                        <input style="width:50.7em" class="videoembedcode" type="text" id="embed_video" name="embed_video" value="<?php echo $embedurl ?>" onClick="javascript:this.select();" />
                                 </div>
-                                <?php endif;?>
+									<?php } ?>
+                                <?php }?>
+                                
+                                
+                                <!-- AddThis Button BEGIN
+								<div class="addthis_toolbox addthis_default_style">
+								<a href="http://www.addthis.com/bookmark.php?v=250&pub=museamp" class="addthis_button_compact">Share</a>-->
+								<div style="float:right;margin-top: 5px;">
+								<table>
+								<tr>
+								<td>Share This</td><td><a class="addthis_button_facebook"></a></td><td><a class="addthis_button_twitter"></a></td>
+								</tr></table></div>
+								<!--<a class="addthis_button_myspace"></a>
+								<a class="addthis_button_google"></a> -->
+								
+								
+								<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?pub=museamp"></script>
+								<!-- AddThis Button END 
+
+								</div>-->
                         </div>
                         </div>
                         <div style="clear: both;"></div>
                              <?php if ($this->user->usertype == "Administrator" || $this->user->usertype == "Super Administrator"):?>
                                         Options:
-                                        <a href="<?php echo $this->basUrl?>/administrator/index.php?option=com_jomtube&controller=videos&task=edit&cid[]=<?php echo $this->row->id?>" target="_blank">Edit</a>
-                                        | <a onclick="return confirm('Are You Sure?')" href="<?php echo $this->basUrl?>/administrator/index.php?option=com_jomtube&controller=videos&task=remove&cid[]=<?php echo $this->row->id?>" target="_blank">Delete</a>
+                                        <a href="<?php echo $this->basUrl?>/administrator/index.php?option=com_jomtube&controller=videos&task=edit&cid[]=<?php echo $this->row->id?>">Edit</a>
+                                        | <a onclick="return confirm('Are You Sure?')" href="<?php echo $this->basUrl?>/administrator/index.php?option=com_jomtube&controller=videos&task=remove&cid[]=<?php echo $this->row->id?>">Delete</a>
                                                 </p>
                                 <?php endif;?>
                         <div style="clear: both;"></div>
 
                         <?php if ($this->c->allow_comment):?>
-                        <div class="jomtube_comments" style="width:<?php echo $this->c->video_player_width;?>px;">
-                            <?php
 
-                            echo $this->jomtubeComments->displayComments();
-
-                            ?>
-                        </div>
-                        <?php endif;?>
+							<?php if($this->user->id == '0'){ ?>
+							<br>
+							<div id="jcNotice">The comment section is restricted to members only.</div>
+							<?php } else { ?>
+                                        <div class="jomtube_comments" style="width:<?php echo $this->c->video_player_width;?>px;">
+                                            <?php if ($this->c->commenting_system == "JomComment"):?>
+                                                 <?php if ($this->jomtubeComments == "notinstall"):?>
+                                                     <?php echo "<b>You must install jomcomment component to use comment function</b>"?>
+                                                 <?php else:?>
+                                                    <?php $this->jomtubeComments->displayComments();?>
+                                                <?php endif;?>
+                                            <?php endif;?>
+                                        </div>
+							<?php } ?>
+                        <?php endif; ?>
         </div>
 </div>
 <div style="clear: both;"></div>

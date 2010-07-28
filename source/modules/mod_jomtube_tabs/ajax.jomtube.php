@@ -214,14 +214,15 @@ function aio() {
 						   <?php 
 
 							$newLink = JRoute::_("index.php?option=com_jomtube&view=video&id=".$item->id."&Itemid=".$Itemid);
+							$newLink10 =JRoute::_("index.php?option=com_jomtube&view=video&id=$item->id");
 							$patterns[0] = '/\/modules\//';
 							$patterns[1] = '/mod_jomtube_tabs\//';
 							$replacements[0] = '';
 							$replacements[1] = '';
-							$parsedLink = preg_replace($patterns, $replacements, $newLink);
+							$parsedLink = preg_replace($patterns, $replacements, $newLink10);
 							
 							?>								
-  					   			<a href="<?php echo $parsedLink; ?>">
+  					   			<a href="/<?php echo $parsedLink; ?>">
 
 							        <img class="<?php if ($thumbnail_size=='small') echo "vimg90-jt-tabs-module"; elseif ($thumbnail_size=='medium') echo "vimg120-jt-tabs-module"; elseif ($thumbnail_size=='large') echo "vimg150-jt-tabs-module";?>" src="<?php echo JomtubeTabsHelper::showSrcLocalThumbnailAjax($item->directory."/_thumbs/".$item->video_thumb); ?>" border="0" />
 
@@ -231,11 +232,12 @@ function aio() {
 						    <?php 
 
 							$newLink = JRoute::_("index.php?option=com_jomtube&view=video&id=".$item->id."&Itemid=".$Itemid);
+							$newLink10 =JRoute::_("index.php?option=com_jomtube&view=video&id=$item->id");
 							$patterns[0] = '/\/modules\//';
 							$patterns[1] = '/mod_jomtube_tabs\//';
 							$replacements[0] = '';
 							$replacements[1] = '';
-							$parsedLink = preg_replace($patterns, $replacements, $newLink);
+							$parsedLink = preg_replace($patterns, $replacements, $newLink10);
 							
 							?>
 							   <a href="/<?php echo $parsedLink; ?>">
@@ -278,11 +280,12 @@ function aio() {
 				    <?php 
 
 					$newLink2 = JRoute::_("index.php?option=com_jomtube&view=video&id=".$item->id."&Itemid=".$Itemid);
+					$newLink10 =JRoute::_("index.php?option=com_jomtube&view=video&id=$item->id");
 					$patterns[0] = '/\/modules\//';
 					$patterns[1] = '/mod_jomtube_tabs\//';
 					$replacements[0] = '';
 					$replacements[1] = '';
-					$parsedLink2 = preg_replace($patterns, $replacements, $newLink2);
+					$parsedLink2 = preg_replace($patterns, $replacements, $newLink10);
 					
 					?>
 						<a href="/<?php echo $parsedLink2; ?>" title="<?php echo $item->video_title; ?>">
@@ -316,15 +319,19 @@ function aio() {
 
 				    //this is currently broken?? need to look at filter by user later
 					//$newLink3 = JRoute::_('index.php?option=com_jomtube&view=videos&type=member&user_id=' . $item->user_id."&Itemid=".$Itemid);
-					//$patterns[0] = '/\/modules\//';
-					//$patterns[1] = '/mod_jomtube_tabs\//';
-					//$replacements[0] = '';
-					//$replacements[1] = '';
-					//$parsedLink3 = preg_replace($patterns, $replacements, $newLink3);
-					$parsedLink3 = '/community/profile?userid='. $item->user_id;
+					$newLink3 = JRoute::_("index.php?option=com_community&view=profile&userid=".$item->user_id);
+					//echo $newLink3;
+					$patterns[0] = '/\/modules\//';
+					$patterns[1] = '/mod_jomtube_tabs\//';
+					$replacements[0] = '';
+					$replacements[1] = '';
+					$parsedLink3 = preg_replace($patterns, $replacements, $newLink3);
+					//echo $parsedLink3;
+					//$parsedLink3 = '/community/profile?userid='. $item->user_id;
+					//$parsedLink3 = preg_replace($patterns, $replacements, $newLink10);
 					
 					?>
-						<?php echo _VIDEOINFO_AUTHOR ?>:<span class="video-username-jt-tabs-module"> <a href="<?php echo $parsedLink3; ?>"><?php echo jomtube::showShortAuthor($item->username)?></a></span>
+						<?php echo _VIDEOINFO_AUTHOR ?>:<span class="video-username-jt-tabs-module"> <a href="<?php echo DS.$parsedLink3; ?>"><?php echo jomtube::showShortAuthor($item->username)?></a></span>
 
 					</div>
 
